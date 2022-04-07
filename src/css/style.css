@@ -23,7 +23,17 @@ li {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.plr-10 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.cnt-padding {
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 /*header*/
