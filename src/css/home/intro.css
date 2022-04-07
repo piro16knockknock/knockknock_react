@@ -118,7 +118,7 @@
 
 #intro-ment h4 {
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 6rem;
   color: #9f8bbe;
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -126,7 +126,7 @@
 
 #intro-ment h5 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #575757;
 }
 
@@ -138,7 +138,7 @@
 }
 
 #intro-persona img {
-  height: 11rem;
+  height: 16rem;
 }
 
 #intro-persona-title {
@@ -150,18 +150,18 @@
   background: #bddbff;
   border-radius: 1rem;
   margin: 0 2rem;
-  padding: 2rem;
-  width: 36rem;
+  padding: 4rem;
+  width: 50rem;
 }
 
 .persona-box h6 {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-bottom: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .persona-box p {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   line-height: 1.8rem;
   word-break: keep-all;
 }
@@ -230,19 +230,22 @@
 }
 
 #intro-service {
-  padding-top: 8rem;
+  padding-top: 10rem;
   margin-top: 10rem;
 }
 
+#intro-service-text {
+  padding-left: 35rem;
+}
 #intro-service-text h5 {
-  font-size: 2.4rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
   color: black;
 }
 
 #intro-service-text h6 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 2.5rem;
   color: #535353;
   margin-bottom: 2.5rem;
@@ -254,7 +257,7 @@
 }
 
 #intro-service-text p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
   color: #535353;
 }
@@ -263,14 +266,15 @@
   display: flex;
   padding: 3rem;
   flex-direction: column;
-  margin: 6rem 0.5rem 10rem 0.5rem;
+  margin: 9rem 1rem 13rem 1rem;
   overflow: hidden;
   background-color: white;
   border: #ddd 1px solid;
   border-radius: 50%;
-  width: 18rem;
-  height: 18rem;
+  width: 20rem;
+  height: 20rem;
   justify-content: center;
+  align-items: center;
 }
 
 .intro-service-circle span {
@@ -280,12 +284,12 @@
 }
 
 .intro-service-circle h6 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .intro-feature h6 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 3rem;
 }
@@ -295,7 +299,7 @@
 }
 
 .intro-feature p {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .intro-feature span {
@@ -303,11 +307,11 @@
 }
 
 #intro-cal-img {
-  width: 60rem;
+  width: 70rem;
 }
 
 #intro-roommate img {
-  width: 60rem;
+  width: 70rem;
 }
 
 #intro-living {
@@ -315,7 +319,7 @@
 }
 
 #intro-living img {
-  width: 60rem;
+  width: 70rem;
   border-radius: 1rem;
 }
 
@@ -385,21 +389,21 @@
 }
 
 .footer-content {
-  height: 20rem;
+  height: 40rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .footer-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 600;
   margin-right: 5rem;
   margin-left: 5rem;
   margin-bottom: 1rem;
 }
 .footer-subtitle {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-left: 5rem;
 }
 
@@ -412,20 +416,19 @@
 }
 
 .footer-index {
-  margin-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .footer-li h5 {
-  font-size: 1.6rem;
+  font-size: 3rem;
   font-weight: 600;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.4rem;
+  padding-bottom: 2rem;
 }
 .footer-li li.footer-index {
   padding-bottom: 0.3rem;
 }
 .footer-li li.footer-index a {
-  font-size: 1.2rem;
   padding-bottom: 0.3rem;
 }
 .footer-2,
