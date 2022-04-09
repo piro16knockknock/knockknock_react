@@ -1,7 +1,8 @@
 import React from "react";
 import HaveHome from "./have_home";
+import NoHome from "./no_home";
 import RestIntro from "./rest_intro";
-import "../../css/home/intro.css";
+import "../../css/intro/intro.css";
 
 // have_home과 no_home이 여기로
 
@@ -26,7 +27,8 @@ const IntroLogin = (props) => {
           }}
           className="intro-main-cnt position-relative"
         >
-          <HaveHome />
+          {/* <HaveHome /> */}
+          <NoHome />
         </div>
       </div>
       <RestIntro />
