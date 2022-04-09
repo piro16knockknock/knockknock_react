@@ -14,7 +14,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<IntroNotLogin />}></Route>
+          <Route path="/" element={<IntroLogin />}></Route>
+          {/* 로그인 안했으면 IntroNotLogin */}
         </Routes>
         <Routes>
           <Route path="/home" element={<Calendar />}></Route>
