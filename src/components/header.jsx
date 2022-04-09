@@ -34,7 +34,7 @@ const Header = () => {
           <Nav>
             {/**Nav == ul */}
             <Nav.Link href="#link">로그아웃</Nav.Link>
-            <Nav.Link href="#link">마이페이지</Nav.Link>
+            <Nav.Link href="/mypage">마이페이지</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

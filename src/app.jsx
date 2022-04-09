@@ -7,6 +7,7 @@ import Calendar from "./routes/home/calendar";
 import LivingRule from "./routes/home/living_rule";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login/login";
+import MyPage from "./routes/mypage/mypage";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
+        </Routes>
+        <Routes>
+          <Route path="/mypage" element={<MyPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
