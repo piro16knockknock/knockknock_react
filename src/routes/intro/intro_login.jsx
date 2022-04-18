@@ -2,7 +2,6 @@ import React from "react";
 import HaveHome from "./have_home";
 import NoHome from "./no_home";
 import RestIntro from "./rest_intro";
-import "../../css/intro/intro.css";
 
 // have_home과 no_home이 여기로
 
