@@ -26,6 +26,37 @@ a {
   text-decoration: none !important;
 }
 
+.cal-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cal-profile-title {
+  border-radius: 50rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1.2rem;
+  margin: 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.cal-profile-box {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cal-profile-username {
+  font-weight: 500;
+  margin: 1.6rem 0;
+  font-size: 1.3rem;
+}
+
+.cal-profile-username p {
+  color: #707070;
+}
 .plr-10 {
   padding-left: 10rem;
   padding-right: 10rem;

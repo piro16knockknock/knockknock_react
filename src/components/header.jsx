@@ -25,8 +25,10 @@ const Header = () => {
             <Nav.Link href="#link">성향 테스트</Nav.Link>
             <Nav.Link href="#link">커뮤니티</Nav.Link>
             <NavDropdown title="설정" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/setting">집 관리</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/setting/myhome_detail">
+                집 관리
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/setting/roommate_list">
                 룸메이트 관리
               </NavDropdown.Item>
             </NavDropdown>

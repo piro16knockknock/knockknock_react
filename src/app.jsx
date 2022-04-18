@@ -8,6 +8,8 @@ import LivingRule from "./routes/home/living_rule";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login/login";
 import MyPage from "./routes/mypage/mypage";
+import MyHomeDetail from "./routes/setting/myhome_detail";
+import RoommateList from "./routes/setting/roommate_list";
 
 function App() {
   return (
@@ -30,6 +32,19 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/mypage" element={<MyPage />}></Route>
+        </Routes>
+        {/* setting */}
+        <Routes>
+          <Route
+            path="/setting/myhome_detail"
+            element={<MyHomeDetail />}
+          ></Route>
+        </Routes>
+        <Routes>
+          <Route
+            path="/setting/roommate_list"
+            element={<RoommateList />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>
