@@ -1,86 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "../../css/setting/roommate_list.module.css";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { TitleSharp } from "@material-ui/icons";
+import { roommateList, invite_list, roommateTitles } from "./data";
 
 const RoommateList = (props) => {
-  const [roommateList, setRoommateList] = useState([
-    {
-      key: 1,
-      pk: 1,
-      nick_name: "aaa",
-      profile_img:
-        "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=301&q=80",
-    },
-    {
-      key: 2,
-      pk: 2,
-      nick_name: "bbb",
-      profile_img:
-        "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=301&q=80",
-    },
-  ]);
-  const [inviteList, setInviteList] = useState([
-    {
-      key: 1,
-      pk: 1,
-      nick_name: "aaa",
-      profile_img:
-        "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=301&q=80",
-    },
-    {
-      key: 2,
-      pk: 2,
-      nick_name: "bbb",
-      profile_img:
-        "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=301&q=80",
-    },
-  ]);
-  const [roommateTitles, setRoommateTitles] = useState({
-    //nick_name 으로 가져와야함
-    aaa: ["노크노크 스타터", "등등..."],
-    bbb: ["노크노크 스타터", "등등..."],
-  });
+  const [inviteList, setInviteList] = useState(invite_list); // 얘만 바뀜
   /*캐러셀 JS*/
-  const container = document.querySelectorAll(".roommate-list__container");
-  const prevBtn = document.querySelectorAll(".roommate-list__carousel-left");
-  const nextBtn = document.querySelectorAll(".roommate-list__carousel-right");
-
-  (function addEvent() {
-    if (prevBtn[0]) {
-      prevBtn[0].addEventListener("click", () => {
-        console.log("click");
-        translateContainer.bind(this, 1, 0);
-      });
-      nextBtn[0].addEventListener(
-        "click",
-        translateContainer.bind(this, -1, 0)
-      );
-    }
-    if (prevBtn[1]) {
-      prevBtn[1].addEventListener("click", translateContainer.bind(this, 1, 1));
-      nextBtn[1].addEventListener(
-        "click",
-        translateContainer.bind(this, -1, 1)
-      );
-    }
-  })();
-
+  const roommateContainerRef = useRef();
+  const inviteContainerRef = useRef();
+  const handleRoommateLeftClick = () => {
+    translateContainer.call(this, 1, 0);
+  };
+  const handleRoommateRightClick = () => {
+    translateContainer.call(this, -1, 0);
+  };
+  const handleInviteLeftClick = () => {
+    translateContainer.call(this, 1, 1);
+  };
+  const handleInviteRightClick = () => {
+    translateContainer.call(this, -1, 1);
+  };
+  function translateRoommateContainer(direction, selectedBtn, i) {
+    roommateContainerRef.current.style.transitionDuration = "500ms";
+    roommateContainerRef.current.style.transform = `translateX(${
+      direction * 103
+    }%)`;
+    roommateContainerRef.current.ontransitionend = () =>
+      reorganizeEl(selectedBtn, i);
+  }
+  function translateInviteContainer(direction, selectedBtn, i) {
+    inviteContainerRef.current.style.transitionDuration = "500ms";
+    inviteContainerRef.current.style.transform = `translateX(${
+      direction * 103
+    }%)`;
+    inviteContainerRef.current.ontransitionend = () =>
+      reorganizeEl(selectedBtn, i);
+  }
   function translateContainer(direction, i) {
     const selectedBtn = direction === 1 ? "prev" : "next";
-    container[i].style.transitionDuration = "500ms";
-    container[i].style.transform = `translateX(${direction * 103}%)`;
-    container[i].ontransitionend = () => reorganizeEl(selectedBtn, i);
+    i === 0
+      ? translateRoommateContainer(direction, selectedBtn, i)
+      : translateInviteContainer(direction, selectedBtn, i);
   }
-
-  function reorganizeEl(selectedBtn, i) {
-    container[i].removeAttribute("style");
+  function roommateReorganizeEl(selectedBtn) {
+    roommateContainerRef.current.removeAttribute("style");
     selectedBtn === "prev"
-      ? container[i].insertBefore(
-          container[i].lastElementChild,
-          container[i].firstElementChild
+      ? roommateContainerRef.current.insertBefore(
+          roommateContainerRef.current.lastElementChild,
+          roommateContainerRef.current.firstElementChild
         )
-      : container[i].appendChild(container[i].firstElementChild);
+      : roommateContainerRef.current.appendChild(
+          roommateContainerRef.current.firstElementChild
+        );
+  }
+  function inviteReorganizeEl(selectedBtn) {
+    inviteContainerRef.current.removeAttribute("style");
+    selectedBtn === "prev"
+      ? inviteContainerRef.current.insertBefore(
+          inviteContainerRef.current.lastElementChild,
+          inviteContainerRef.current.firstElementChild
+        )
+      : inviteContainerRef.current.appendChild(
+          inviteContainerRef.current.firstElementChild
+        );
+  }
+  function reorganizeEl(selectedBtn, i) {
+    i === 0
+      ? roommateReorganizeEl(selectedBtn)
+      : inviteReorganizeEl(selectedBtn);
   }
 
   /*초대 취소 ajax*/
@@ -96,36 +83,31 @@ const RoommateList = (props) => {
     //   }),
     // });
     // const { id: userId } = await res.json();
-    // inviteCancelHandleResponse(userId);
+    inviteCancelHandleResponse(id);
   };
 
-  //   const inviteCancelHandleResponse = (id) => {
-  //     const element = document.querySelector(`.roommate-id-${id}`);
-  //     element.remove();
+  const inviteCancelHandleResponse = (id) => {
+    setInviteList((inviteList) => {
+      const updateList = { ...inviteList };
+      delete updateList[id];
+      return updateList;
+    });
+  };
 
-  //     //초대중인 유저 0명이 되면
-  //     const invite_users_ul = document.querySelectorAll(
-  //       ".roommate-list__container"
-  //     );
-  //     if (invite_users_ul[invite_users_ul.length - 1].children.length == 0) {
-  //       const carousel = document.querySelectorAll(".roommate-list__carousel");
-  //       const p = document.createElement("p");
-  //       p.className = "roommate-list__empty";
-  //       p.innerHTML = "초대중인 유저가 없습니다.";
-  //       carousel[carousel.length - 1].after(p);
-  //       carousel[carousel.length - 1].remove();
-  //     }
-  //   };
   return (
     <section className={styles.roommate_list}>
       <p className={styles.roommate_list__title}>룸메이트 관리</p>
-      {roommateList ? (
+      {roommateList.length !== 0 ? (
         <div className={styles.roommate_list__carousel}>
           <FaArrowAltCircleLeft
+            onClick={handleRoommateLeftClick}
             className={styles.roommate_list__carousel_left}
           />
           <div className={styles.roommate_list__window}>
-            <ul className={styles.roommate_list__container}>
+            <ul
+              className={styles.roommate_list__container}
+              ref={roommateContainerRef}
+            >
               {roommateList.map((roommate) => {
                 return (
                   <li className={styles.roommate_list__user} key={roommate.key}>
@@ -139,7 +121,7 @@ const RoommateList = (props) => {
                     </p>
                     <a
                       data-bs-toggle="modal"
-                      data-bs-target={`#roommateProfileModal-${roommate.pk}`}
+                      data-bs-target={`#roommateProfileModal-${roommate.key}`}
                       className={styles.roommate_list__btn}
                     >
                       프로필 보기
@@ -147,7 +129,7 @@ const RoommateList = (props) => {
                     {/* 모달 수정 필요 */}
                     <div
                       className="modal fade"
-                      id={`roommateProfileModal-${roommate.pk}`}
+                      id={`roommateProfileModal-${roommate.key}`}
                       tabIndex="-1"
                       aria-labelledby="roommateProfileLabel"
                       aria-hidden="true"
@@ -221,6 +203,7 @@ const RoommateList = (props) => {
             </ul>
           </div>
           <FaArrowAltCircleRight
+            onClick={handleRoommateRightClick}
             className={styles.roommate_list__carousel_right}
           />
         </div>
@@ -228,18 +211,23 @@ const RoommateList = (props) => {
         <p className={styles.roommate_list__empty}>룸메이트가 없습니다.</p>
       )}
       <p className={styles.roommate_list__title}>초대중인 유저</p>
-      {inviteList ? (
+      {Object.keys(inviteList).length !== 0 ? (
         <div className={styles.roommate_list__carousel}>
           <FaArrowAltCircleLeft
+            onClick={handleInviteLeftClick}
             className={styles.roommate_list__carousel_left}
           />
           <div className={styles.roommate_list__window}>
-            <ul className={styles.roommate_list__container}>
-              {inviteList.map((invite_user) => {
+            <ul
+              className={styles.roommate_list__container}
+              ref={inviteContainerRef}
+            >
+              {Object.keys(inviteList).map((key) => {
+                const invite_user = inviteList[key];
                 return (
                   <li
                     key={invite_user.key}
-                    className={`${styles.roommate_list__user} roommate-id-${invite_user.pk}`}
+                    className={`${styles.roommate_list__user} roommate-id-${invite_user.key}`}
                   >
                     <img
                       className="cal-profile-img"
@@ -255,7 +243,7 @@ const RoommateList = (props) => {
                     </p>
                     <button
                       type="button"
-                      onClick={() => onClickInviteCancel(invite_user.pk)}
+                      onClick={() => onClickInviteCancel(invite_user.key)}
                       className={`${styles.roommate_list__btn} ${styles.roommate_list__btn_tomato}`}
                     >
                       초대 취소
@@ -266,6 +254,7 @@ const RoommateList = (props) => {
             </ul>
           </div>
           <FaArrowAltCircleRight
+            onClick={handleInviteRightClick}
             className={styles.roommate_list__carousel_right}
           />
         </div>
