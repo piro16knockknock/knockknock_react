@@ -1,11 +1,26 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../../css/setting/roommate_list.module.css";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { roommateList, invite_list, roommateTitles } from "./data";
+import { Modal } from "react-bootstrap";
 
 const RoommateList = (props) => {
-  const [inviteList, setInviteList] = useState(invite_list); // 얘만 바뀜
+  const [show, setShow] = useState(Array(roommateList.length).fill(false));
+  function handleClose(index) {
+    const updateList = [...show].map((item, idx) => {
+      if (idx === index) return false;
+    });
+    setShow(updateList);
+  }
+  function handleShow(index) {
+    const updateList = [...show].map((item, idx) => {
+      if (idx === index) return true;
+    });
+    console.log(updateList);
+    setShow(updateList);
+  }
   /*캐러셀 JS*/
+  const [inviteList, setInviteList] = useState(invite_list); // 얘만 바뀜
   const roommateContainerRef = useRef();
   const inviteContainerRef = useRef();
   const handleRoommateLeftClick = () => {
@@ -108,7 +123,7 @@ const RoommateList = (props) => {
               className={styles.roommate_list__container}
               ref={roommateContainerRef}
             >
-              {roommateList.map((roommate) => {
+              {roommateList.map((roommate, index) => {
                 return (
                   <li className={styles.roommate_list__user} key={roommate.key}>
                     <img
@@ -119,63 +134,48 @@ const RoommateList = (props) => {
                     <p className={styles.roommate_list__user__name}>
                       {roommate.nick_name}
                     </p>
-                    <a
-                      data-bs-toggle="modal"
-                      data-bs-target={`#roommateProfileModal-${roommate.key}`}
+                    <button
                       className={styles.roommate_list__btn}
+                      onClick={() => handleShow(index)}
                     >
                       프로필 보기
-                    </a>
+                    </button>
                     {/* 모달 수정 필요 */}
-                    <div
-                      className="modal fade"
-                      id={`roommateProfileModal-${roommate.key}`}
-                      tabIndex="-1"
-                      aria-labelledby="roommateProfileLabel"
-                      aria-hidden="true"
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <h5
-                              className={`modal-title ${styles.myhome_roommate__modal_font}`}
-                              id="roommateProfileLabel"
-                            >
-                              프로필 보기
-                            </h5>
-                            <button
-                              type="button"
-                              className="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div className="modal-body roommate-list__modal">
-                            <div className="roommate-list__modal-profile text-center">
-                              <img
-                                className="cal-profile-img"
-                                alt="profile"
-                                src={roommate.profile_img}
-                              />
-                              <p>{roommate.nick_name}</p>
-                            </div>
-                            <div className={styles.roommate_list__modal_title}>
-                              <p>칭호</p>
-                              <hr />
-                              {roommateTitles[roommate.nick_name].map(
-                                (title) => {
-                                  return (
-                                    <span
-                                      key={Math.random()}
-                                      className="cal-profile-title border rounded-pill px-3 py-1 mx-1"
-                                    >
-                                      {title}
-                                    </span>
-                                  );
-                                }
-                              )}
-                            </div>
-                            {/* <div className="roommate-list__modal-title">
+
+                    <Modal show={show[index]} onHide={() => handleClose(index)}>
+                      <Modal.Header closeButton>
+                        <Modal.Title
+                          className={styles.myhome_roommate__modal_font}
+                        >
+                          프로필 보기
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body className={styles.roommate_list__modal}>
+                        <div
+                          className={`${styles.roommate_list__modal_profile} text-center`}
+                        >
+                          <img
+                            className="cal-profile-img"
+                            alt="profile"
+                            src={roommate.profile_img}
+                          />
+                          <p>{roommate.nick_name}</p>
+                        </div>
+                        <div className={styles.roommate_list__modal_title}>
+                          <p>칭호</p>
+                          <hr />
+                          {roommateTitles[roommate.nick_name].map((title) => {
+                            return (
+                              <span
+                                key={Math.random()}
+                                className="cal-profile-title border rounded-pill px-3 py-1 mx-1"
+                              >
+                                {title}
+                              </span>
+                            );
+                          })}
+                        </div>
+                        {/* <div className="roommate-list__modal-title">
                                             <p>달성률</p>
                                             <hr />
                                             <div className="chart-container">
@@ -193,10 +193,8 @@ const RoommateList = (props) => {
                                                 </div>
                                             </div>
                                         </div> */}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      </Modal.Body>
+                    </Modal>
                   </li>
                 );
               })}

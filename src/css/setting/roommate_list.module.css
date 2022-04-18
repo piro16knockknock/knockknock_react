@@ -113,25 +113,27 @@
   height: 60rem;
 }
 
-.roommate_list__modal-profile img {
-  width: 8rem;
-  height: 8rem;
+.roommate_list__modal_profile img {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
 }
 
-.roommate_list__modal-profile i {
+.roommate_list__modal_profile i {
   font-size: 8rem;
 }
 
-.roommate_list__modal-profile p {
+.roommate_list__modal_profile p {
+  margin-top: 1rem;
   font-size: 2rem;
   font-weight: 800;
 }
 
-.roommate_list__modal-title {
+.roommate_list__modal_title {
   padding: 3rem 0;
 }
 
-.roommate_list__modal-title p {
+.roommate_list__modal_title p {
   font-size: 1.6rem;
   font-weight: 600;
 }

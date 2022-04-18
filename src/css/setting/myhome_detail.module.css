@@ -13,47 +13,47 @@
   color: black;
 }
 
-.myhome-detail {
+.myhome_detail {
   display: flex;
   justify-content: center;
 }
 
-.myhome-detail > div {
+.myhome_detail > div {
   margin: 3rem 20rem;
   width: 90rem;
 }
 
-.myhome-detail__display-none {
+.myhome_detail__displaynone {
   display: none !important;
 }
 
-/*myhome-info*/
-.myhome-detail__title {
+/*myhome_info*/
+.myhome_detail__title {
   font-size: 2rem;
   font-weight: 600;
   margin-top: 3rem;
 }
 
-.myhome-detail__row {
+.myhome_detail__row {
   margin: 1rem 0;
   display: flex;
   align-items: center;
 }
 
-.myhome-detail__row label,
-.myhome-detail__row__flex_row > label {
+.myhome_detail__row label,
+.myhome_detail__row__flex_row > label {
   font-size: 1.5rem;
   width: 15rem;
   font-weight: 500;
   color: slategray;
 }
 
-.myhome-detail__row span {
+.myhome_detail__row span {
   font-size: 1.3rem;
 }
 
-.myhome-detail__row input,
-.myhome-detail__row__rent > input {
+.myhome_detail__row input,
+.myhome_detail__row__rent > input {
   border: 1px solid slategray;
   border-radius: 0.5rem;
   font-size: 1.3rem;
@@ -61,16 +61,16 @@
 }
 
 /*전세 월세 버튼*/
-.myhome-info__rent-or-utility {
+.myhome_info__rent-or-utility {
   display: flex;
   padding: 0 0 1rem 0;
 }
 
-.myhome-info__radio-btn input[type="radio"] {
+.myhome_info__radio-btn input[type="radio"] {
   display: none;
 }
 
-.myhome-info__radio-btn input[type="radio"] + span {
+.myhome_info__radio-btn input[type="radio"] + span {
   border: 0.2rem solid slategray;
   padding: 0.5rem 1.5rem;
   margin-right: 1rem;
@@ -78,47 +78,47 @@
   font-size: 1.3rem;
 }
 
-.myhome-info__radio-btn input[type="radio"] + span:hover {
+.myhome_info__radio-btn input[type="radio"] + span:hover {
   cursor: pointer;
 }
 
-.myhome-info__radio-btn input[type="radio"]:checked + span {
+.myhome_info__radio-btn input[type="radio"]:checked + span {
   background-color: slategray;
   color: #fff;
 }
 
 /*월세 납부일*/
-.myhome-detail__row__rent {
+.myhome_detail__row__rent {
   font-size: 1.3rem;
 }
 
-.myhome-detail__row__rent > input {
+.myhome_detail__row__rent > input {
   width: 3.5rem;
   margin-right: 0.5rem;
 }
 
-.myhome-detail__row__rent > span {
+.myhome_detail__row__rent > span {
   margin-right: 0.5rem;
 }
 
 /*공과금 종류*/
-.myhome-detail__row__utility-ul > li {
+.myhome_detail__row__utility-ul > li {
   padding: 1rem 0;
   border-bottom: 0.1rem solid rgba(1, 1, 1, 0.2);
 }
 
-.myhome-detail__row__utility-ul > li > i {
+.myhome_detail__row__utility-ul > li > i {
   font-size: 1.5rem;
   color: tomato;
 }
 
-.myhome-detail__row__rent-type {
+.myhome_detail__row__rent-type {
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
 }
 
-.myhome-detail__row__rent-type > input {
+.myhome_detail__row__rent-type > input {
   border: 1px solid slategray;
   width: 4rem;
   border-radius: 0.5rem;
@@ -126,16 +126,16 @@
   padding: 0.3rem;
 }
 
-.myhome-detail__row__flex_row {
+.myhome_detail__row__flex_row {
   display: flex;
   flex-direction: row;
 }
 
-.myhome-detail__row__rent-type span {
+.myhome_detail__row__rent-type span {
   margin-right: 0.8rem;
 }
 
-.myhome-detail__btn {
+.myhome_detail__btn {
   font-size: 1.5rem;
   border: 0.2rem solid rgb(255, 197, 109);
   padding: 0.5rem 1.5rem;
@@ -144,66 +144,66 @@
   transition: all 0.2s ease-in-out;
 }
 
-.myhome-detail__btn:hover {
+.myhome_detail__btn:hover {
   background-color: rgb(255, 197, 109);
   color: white;
 }
 
 /*roommate*/
-.myhome-roommate > div {
+.myhome_roommate > div {
   display: flex;
   align-items: center;
 }
 
-.myhome-roommate__column {
+.myhome_roommate__column {
   margin-right: 2rem;
 }
 
-.myhome-roommate__column > a > img {
+.myhome_roommate__column > a > img {
   border-radius: 50%;
   width: 10rem;
   height: 10rem;
   transition: all 0.2s ease-in-out;
 }
 
-.myhome-roommate__column > a > img:hover {
+.myhome_roommate__column > a > img:hover {
   opacity: 0.7;
 }
 
-.myhome-roommate__column i {
+.myhome_roommate__column i {
   font-size: 10rem;
 }
 
-.myhome-roommate__column > p {
+.myhome_roommate__column > p {
   font-size: 1.3rem;
   color: slategray;
   padding-top: 0.5rem;
   text-align: center;
 }
 
-.myhome-roommate__invite a i {
+.myhome_roommate__invite a i {
   font-size: 5rem;
   color: rgba(1, 1, 1, 0.2);
   transition: color 0.2s ease-in-out;
 }
 
-.myhome-roommate__invite a i:hover {
+.myhome_roommate__invite a i:hover {
   cursor: pointer;
   color: rgb(137, 186, 159);
 }
 
 /*movehome*/
-.myhome-move hr {
+.myhome_move hr {
   margin-bottom: 2rem;
 }
 
 /*modal*/
-.myhome-roommate__modal-input {
+.myhome_roommate__modal_input {
   display: flex;
   align-items: center;
 }
 
-.myhome-roommate__modal-input input {
+.myhome_roommate__modal_input input {
   font-size: 1.3rem;
   width: 100%;
   padding: 1rem 2rem;
@@ -212,43 +212,43 @@
   border: 0.2rem solid rgb(137, 186, 159);
 }
 
-.myhome-roommate__modal-font {
+.myhome_roommate__modal_font {
   font-size: 1.3rem;
 }
 
-.myhome-roommate__modal-user-list {
+.myhome_roommate__modal_user_list {
   display: flex;
   align-items: center;
 }
 
-.myhome-roommate__modal-user-list img {
+.myhome_roommate__modal_user_list img {
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
   margin: 1rem;
 }
 
-.myhome-roommate__modal-user-list i {
+.myhome_roommate__modal_user_list i {
   margin: 1rem;
   font-size: 5rem;
 }
 
-.myhome-roommate__modal-user-list input {
+.myhome_roommate__modal_user_list input {
   padding: 1rem;
 }
 
-.myhome-roommate__modal-user-list p {
+.myhome_roommate__modal_user_list p {
   font-size: 1.3rem;
 }
 
 /*공과금 추가*/
-.myhome-detail__row__add-utility {
+.myhome_detail__row__add_utility {
   margin: 1rem 0;
   font-size: 3rem;
   transition: all 0.2s ease-in-out;
 }
 
-.myhome-detail__row__add-utility:hover {
+.myhome_detail__row__add_utility:hover {
   cursor: pointer;
   color: rgb(137, 186, 159);
 }
@@ -266,30 +266,30 @@
 }
 
 /*노크 중인 유저*/
-.myhome-knock__empty {
+.myhome_knock__empty {
   font-size: 1.4rem;
 }
 
-.myhome-knock__row {
+.myhome_knock__row {
   display: flex;
   align-items: center;
 }
 
-.myhome-knock__column {
+.myhome_knock__column {
   margin-right: 2rem;
 }
 
-.myhome-knock__column > img {
+.myhome_knock__column > img {
   border-radius: 50%;
   width: 10rem;
   height: 10rem;
 }
 
-.myhome-knock__column i {
+.myhome_knock__column i {
   font-size: 10rem;
 }
 
-.myhome-knock__column > p {
+.myhome_knock__column > p {
   font-size: 1.3rem;
   color: slategray;
   padding-top: 0.5rem;
