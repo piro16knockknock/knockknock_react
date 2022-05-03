@@ -25,7 +25,9 @@ const Header = () => {
               <NavDropdown.Item onClick={() => navigate("/home/living_rule")}>
                 생활 수칙
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">가이드라인</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/home/guideline")}>
+                가이드라인
+              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#link">성향 테스트</Nav.Link>
             <Nav.Link href="#link">커뮤니티</Nav.Link>

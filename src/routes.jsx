@@ -5,6 +5,8 @@ const HeaderIntroLogin = lazy(() => import("./routes/intro/intro_login"));
 const IntroNotLogin = lazy(() => import("./routes/intro/intro_not_login"));
 const Calendar = lazy(() => import("./routes/home/calendar"));
 const LivingRule = lazy(() => import("./routes/home/living_rule"));
+const Guideline = lazy(() => import("./routes/home/guideline"));
+
 const Login = lazy(() => import("./routes/login/login"));
 const MyPage = lazy(() => import("./routes/mypage/mypage"));
 const MyHomeDetail = lazy(() => import("./routes/setting/myhome_detail"));
@@ -25,8 +27,11 @@ export default function Routes() {
     },
     {
       path: "home",
-      element: <Calendar />,
-      children: { path: "living_rule", element: <LivingRule /> },
+      children: [
+        { path: "", element: <Calendar /> },
+        { path: "living_rule", element: <LivingRule /> },
+        { path: "guideline", element: <Guideline /> },
+      ]
     },
     {
       path: "setting",
