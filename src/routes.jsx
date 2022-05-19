@@ -1,17 +1,17 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
 
-const HeaderIntroLogin = lazy(() => import("./routes/intro/intro_login"));
-const IntroNotLogin = lazy(() => import("./routes/intro/intro_not_login"));
-const Calendar = lazy(() => import("./routes/home/calendar"));
-const LivingRule = lazy(() => import("./routes/home/living_rule"));
-const Guideline = lazy(() => import("./routes/home/guideline"));
+const HeaderIntroLogin = lazy(() => import("pages/intro/intro_login"));
+const IntroNotLogin = lazy(() => import("pages/intro/intro_not_login"));
+const Calendar = lazy(() => import("pages/home/calendar"));
+const LivingRule = lazy(() => import("pages/home/living_rule"));
+const Guideline = lazy(() => import("pages/home/guideline"));
 
-const Login = lazy(() => import("./routes/login/login"));
-const MyPage = lazy(() => import("./routes/mypage/mypage"));
-const MyHomeDetail = lazy(() => import("./routes/setting/myhome_detail"));
-const RoommateList = lazy(() => import("./routes/setting/roommate_list"));
-const Error = lazy(() => import("./routes/error"));
+const Login = lazy(() => import("pages/login/login"));
+const MyPage = lazy(() => import("pages/mypage/mypage"));
+const MyHomeDetail = lazy(() => import("pages/setting/myhome_detail"));
+const RoommateList = lazy(() => import("pages/setting/roommate_list"));
+const Error = lazy(() => import("./error"));
 
 export default function Routes() {
   const routes = useRoutes([
@@ -31,7 +31,7 @@ export default function Routes() {
         { path: "", element: <Calendar /> },
         { path: "living_rule", element: <LivingRule /> },
         { path: "guideline", element: <Guideline /> },
-      ]
+      ],
     },
     {
       path: "setting",

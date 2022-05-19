@@ -1,6 +1,6 @@
 import React from "react";
 import MyPageSide from "./mypage_side";
-import styles from "../../css/mypage/mypage.module.css";
+import styles from "styles/mypage/mypage.module.css";
 const MyPage = (props) => {
   return (
     <section>

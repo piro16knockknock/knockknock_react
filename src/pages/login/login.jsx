@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../css/login/login.module.css";
+import styles from "styles/login/login.module.css";
 import { FaGoogle } from "react-icons/fa";
 const Login = (props) => {
   return (
