@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import styles from "../../css/setting/roommate_list.module.css";
+import React, { useState, useRef } from "react";
+import styles from "styles/setting/roommate_list.module.css";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { roommateList, invite_list, roommateTitles } from "./data";
+import { roommateList, invite_list, roommateTitles } from "lib/dummy_roommate";
 import { Modal } from "react-bootstrap";
 
 const RoommateList = (props) => {
