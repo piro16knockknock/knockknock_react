@@ -16,18 +16,18 @@ const Error = lazy(() => import("./error"));
 export default function Routes() {
   const routes = useRoutes([
     {
-      path: "login",
-      element: <Login />,
-      /*로그인 안했으면 IntroNotLogin
-        했으면 IntroLogin */
-    },
-    {
       path: "/",
       element: <LayoutContainer />,
       children: [
         {
           path: "/",
           element: <IntroNotLogin />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+          /*로그인 안했으면 IntroNotLogin
+            했으면 IntroLogin */
         },
         {
           path: "home",
