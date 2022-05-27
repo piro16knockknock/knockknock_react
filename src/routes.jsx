@@ -7,7 +7,8 @@ const Calendar = lazy(() => import("pages/home/calendar"));
 const LivingRule = lazy(() => import("pages/home/living_rule"));
 const Guideline = lazy(() => import("pages/home/guideline"));
 
-const Login = lazy(() => import("pages/login/login"));
+const Login = lazy(() => import("pages/auth/login"));
+const SignUp = lazy(() => import("pages/auth/sign-up"));
 const MyPage = lazy(() => import("pages/mypage/mypage"));
 const MyHomeDetail = lazy(() => import("pages/setting/myhome_detail"));
 const RoommateList = lazy(() => import("pages/setting/roommate_list"));
@@ -26,6 +27,12 @@ export default function Routes() {
         {
           path: "login",
           element: <Login />,
+          /*로그인 안했으면 IntroNotLogin
+            했으면 IntroLogin */
+        },
+        {
+          path: "sign-up",
+          element: <SignUp />,
           /*로그인 안했으면 IntroNotLogin
             했으면 IntroLogin */
         },

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "styles/components/custom-input.module.css";
+import styles from "styles/auth/custom-select.module.css";
 const CustomInput = ({ label, onChange }) => {
   return (
     <div className={styles.button_container}>

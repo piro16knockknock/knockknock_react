@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "styles/login/social-btn.module.css";
+import styles from "styles/auth/social-btn.module.css";
 
 const SocialBtn = ({ iconPath, text }) => {
   return (
