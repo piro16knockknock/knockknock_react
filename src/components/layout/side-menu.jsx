@@ -22,7 +22,11 @@ const SideMenu = ({ largeCate, smallCates }) => {
           <li
             key={i}
             onClick={() => navigate(`${v.path}`)}
-            className={location.pathname === `${v.path}` && styles[`highlight`]}
+            className={
+              location.pathname === `${v.path}`
+                ? styles[`highlight`]
+                : undefined
+            }
           >
             {v.label}
           </li>
