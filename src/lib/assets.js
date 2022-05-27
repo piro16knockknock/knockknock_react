@@ -16,4 +16,6 @@ export const ICONS = {
     KAKAO: getIconsPath('kakao.png'),
     GOOGLE: getIconsPath('google.png'),
     EDIT: getIconsPath('edit_icon.png'),
+    PENCIL: getIconsPath('pencil.svg'),
+    PLUS: getIconsPath('plus.svg'),
 }

@@ -1,310 +1,98 @@
-.nav-pills {
-  justify-content: start;
-  align-items: center;
-  font-size: 1.4rem;
-  border-bottom: 0.3px solid #ddd;
+@value knockGreen from "styles/colors.css";
+.container {
+  margin: auto;
+  padding: 5rem 20rem;
+  max-width: 90rem;
+  min-width: 80rem;
 }
 
-.nav-pills .nav-link.active {
-  background-color: #3d3d3d;
+section {
+  margin-bottom: 5.1rem;
 }
-
-.nav-pills .nav-link {
-  color: black;
-}
-
-.myhome_detail {
-  display: flex;
-  justify-content: center;
-}
-
-.myhome_detail > div {
-  margin: 3rem 20rem;
-  width: 90rem;
-}
-
-.myhome_detail__displaynone {
-  display: none !important;
-}
-
-/*myhome_info*/
-.myhome_detail__title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-top: 3rem;
-}
-
-.myhome_detail__row {
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.myhome_detail__row label,
-.myhome_detail__row__flex_row > label {
-  font-size: 1.5rem;
-  width: 15rem;
+.title {
+  font-size: 2.2rem;
   font-weight: 500;
-  color: slategray;
-}
-
-.myhome_detail__row span {
-  font-size: 1.3rem;
-}
-
-.myhome_detail__row input,
-.myhome_detail__row__rent > input {
-  border: 1px solid slategray;
-  border-radius: 0.5rem;
-  font-size: 1.3rem;
-  padding: 0.3rem;
-}
-
-/*전세 월세 버튼*/
-.myhome_info__rent-or-utility {
-  display: flex;
-  padding: 0 0 1rem 0;
-}
-
-.myhome_info__radio-btn input[type="radio"] {
-  display: none;
-}
-
-.myhome_info__radio-btn input[type="radio"] + span {
-  border: 0.2rem solid slategray;
-  padding: 0.5rem 1.5rem;
-  margin-right: 1rem;
-  border-radius: 5rem;
-  font-size: 1.3rem;
-}
-
-.myhome_info__radio-btn input[type="radio"] + span:hover {
-  cursor: pointer;
-}
-
-.myhome_info__radio-btn input[type="radio"]:checked + span {
-  background-color: slategray;
-  color: #fff;
-}
-
-/*월세 납부일*/
-.myhome_detail__row__rent {
-  font-size: 1.3rem;
-}
-
-.myhome_detail__row__rent > input {
-  width: 3.5rem;
-  margin-right: 0.5rem;
-}
-
-.myhome_detail__row__rent > span {
-  margin-right: 0.5rem;
-}
-
-/*공과금 종류*/
-.myhome_detail__row__utility-ul > li {
   padding: 1rem 0;
-  border-bottom: 0.1rem solid rgba(1, 1, 1, 0.2);
+  border-bottom: 0.1rem solid #989898;
+  margin-bottom: 1.6rem;
 }
 
-.myhome_detail__row__utility-ul > li > i {
-  font-size: 1.5rem;
-  color: tomato;
-}
-
-.myhome_detail__row__rent-type {
+.info-row {
   display: flex;
   align-items: center;
-  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
-.myhome_detail__row__rent-type > input {
-  border: 1px solid slategray;
-  width: 4rem;
-  border-radius: 0.5rem;
-  font-size: 1.3rem;
-  padding: 0.3rem;
+.info-row label {
+  width: 13rem;
+  color: #474747;
 }
 
-.myhome_detail__row__flex_row {
-  display: flex;
-  flex-direction: row;
+.name-input {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  width: 33rem;
 }
 
-.myhome_detail__row__rent-type span {
-  margin-right: 0.8rem;
-}
-
-.myhome_detail__btn {
-  font-size: 1.5rem;
-  border: 0.2rem solid rgb(255, 197, 109);
-  padding: 0.5rem 1.5rem;
-  color: rgb(255, 197, 109);
-  border-radius: 5rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.myhome_detail__btn:hover {
-  background-color: rgb(255, 197, 109);
-  color: white;
-}
-
-/*roommate*/
-.myhome_roommate > div {
-  display: flex;
-  align-items: center;
-}
-
-.myhome_roommate__column {
-  margin-right: 2rem;
-}
-
-.myhome_roommate__column > a > img {
+.edit-icon {
   border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  transition: all 0.2s ease-in-out;
+  padding: 0.7rem;
+  margin-left: 1rem;
+  background-color: #c4c4c4;
 }
 
-.myhome_roommate__column > a > img:hover {
-  opacity: 0.7;
-}
-
-.myhome_roommate__column i {
-  font-size: 10rem;
-}
-
-.myhome_roommate__column > p {
-  font-size: 1.3rem;
-  color: slategray;
-  padding-top: 0.5rem;
-  text-align: center;
-}
-
-.myhome_roommate__invite a i {
-  font-size: 5rem;
-  color: rgba(1, 1, 1, 0.2);
-  transition: color 0.2s ease-in-out;
-}
-
-.myhome_roommate__invite a i:hover {
-  cursor: pointer;
-  color: rgb(137, 186, 159);
-}
-
-/*movehome*/
-.myhome_move hr {
-  margin-bottom: 2rem;
-}
-
-/*modal*/
-.myhome_roommate__modal_input {
+.roommate-list {
   display: flex;
   align-items: center;
 }
-
-.myhome_roommate__modal_input input {
-  font-size: 1.3rem;
-  width: 100%;
-  padding: 1rem 2rem;
-  border-radius: 0.2rem;
-  background-color: rgba(1, 1, 1, 0.05);
-  border: 0.2rem solid rgb(137, 186, 159);
-}
-
-.myhome_roommate__modal_font {
-  font-size: 1.3rem;
-}
-
-.myhome_roommate__modal_user_list {
+.roommate {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  width: 12rem;
+  margin-right: 3rem;
 }
 
-.myhome_roommate__modal_user_list img {
+.profile-img {
+  width: 11.2rem;
+  height: 11.2rem;
+  margin-top: 1.5rem;
+  object-fit: cover;
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  margin: 1rem;
 }
 
-.myhome_roommate__modal_user_list i {
-  margin: 1rem;
-  font-size: 5rem;
-}
-
-.myhome_roommate__modal_user_list input {
-  padding: 1rem;
-}
-
-.myhome_roommate__modal_user_list p {
-  font-size: 1.3rem;
-}
-
-/*공과금 추가*/
-.myhome_detail__row__add_utility {
-  margin: 1rem 0;
-  font-size: 3rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.myhome_detail__row__add_utility:hover {
-  cursor: pointer;
-  color: rgb(137, 186, 159);
-}
-
-/*초대 링크*/
-#roommate-invite-url-copy {
-  font-size: 3rem;
-  margin-left: 0.5rem;
-  color: rgb(137, 186, 159);
-}
-
-#roommate-invite-url-copy:hover {
-  cursor: pointer;
-  color: tomato;
-}
-
-/*노크 중인 유저*/
-.myhome_knock__empty {
+.name {
+  padding-top: 0.8rem;
   font-size: 1.4rem;
 }
 
-.myhome_knock__row {
-  display: flex;
-  align-items: center;
-}
-
-.myhome_knock__column {
-  margin-right: 2rem;
-}
-
-.myhome_knock__column > img {
+.plus {
+  background-color: #cacaca;
+  padding: 1.5rem;
   border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-}
-
-.myhome_knock__column i {
-  font-size: 10rem;
-}
-
-.myhome_knock__column > p {
-  font-size: 1.3rem;
-  color: slategray;
-  padding-top: 0.5rem;
-  text-align: center;
-}
-
-/*룸메이트 초대 버튼*/
-.btn-green {
-  background-color: rgb(137, 186, 159);
-  border: 1px solid rgb(137, 186, 159);
-  color: white !important;
   transition: all 0.2s ease-in-out;
 }
-.btn-green:hover {
+
+.plus:hover {
+  cursor: pointer;
+  background-color: knockGreen;
+}
+
+.move-out {
+  display: inline-block;
+  color: #ff6745;
+  border: 0.2rem solid #ff6745;
+  border-radius: 2.5rem;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.move-out:hover {
+  cursor: pointer;
   color: white;
-  background-color: rgb(90, 153, 118);
-  border: 1px solid rgb(90, 153, 118);
+  background-color: #ff6745;
 }
