@@ -20,6 +20,7 @@ const SideMenu = ({ largeCate, smallCates }) => {
       {smallCates.map((v, i) => {
         return (
           <li
+            key={i}
             onClick={() => navigate(`${v.path}`)}
             className={location.pathname === `${v.path}` && styles[`highlight`]}
           >
