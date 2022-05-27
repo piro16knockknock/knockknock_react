@@ -1,0 +1,14 @@
+.container {
+  margin: 0 5rem 5rem 5rem;
+  height: 20rem;
+  overflow: auto;
+}
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #c4c4c4;
+}

@@ -1,0 +1,35 @@
+.container {
+  margin: 0 5rem 5rem 5rem;
+  height: 20rem;
+  overflow: auto;
+}
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #c4c4c4;
+}
+
+.info-edit-btn {
+  border: 0.1rem solid #363636;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 3rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.info-edit-btn:hover {
+  background-color: #6b6b6b;
+  color: white;
+}
+
+.roommate {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

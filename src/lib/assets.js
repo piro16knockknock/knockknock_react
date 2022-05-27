@@ -18,4 +18,5 @@ export const ICONS = {
     EDIT: getIconsPath('edit_icon.png'),
     PENCIL: getIconsPath('pencil.svg'),
     PLUS: getIconsPath('plus.svg'),
+    BORDER_PLUS: getIconsPath('border_plus.svg'),
 }
