@@ -4,11 +4,14 @@ const CustomInput = ({ label, onChange }) => {
   return (
     <div className={styles.button_container}>
       <label htmlFor={styles.input}>{label}</label>
-      <input
-        type="text"
-        className={styles.input}
-        onChange={(e) => onChange(e)}
-      />
+      <select onChange={(e) => onChange(e)} className={styles[`input`]}>
+        <option disabled selected value>
+          ------------
+        </option>
+
+        <option value="여자">여자</option>
+        <option value="여자">남자</option>
+      </select>
     </div>
   );
 };

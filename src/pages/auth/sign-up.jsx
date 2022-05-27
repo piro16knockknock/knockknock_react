@@ -9,6 +9,7 @@ const SignUp = (props) => {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [birthday, setBirthday] = useState("");
+  const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
 
   const handleId = (e) => {
@@ -25,6 +26,10 @@ const SignUp = (props) => {
   const handleBirthday = (e) => {
     setBirthday(e.target.value);
   };
+
+  const handleGender = (e) => {
+    setGender(e.target.value);
+  };
   const handlePhone = (e) => {
     setPhone(e.target.value);
   };
@@ -36,7 +41,7 @@ const SignUp = (props) => {
       <CustomInput label="비밀번호" onChange={handlePassword} />
       <CustomInput label="비밀번호 재확인" onChange={handlePasswordConfirm} />
       <CustomInput label="생년월일" onChange={handleBirthday} />
-      <CustomSelect label="성별" />
+      <CustomSelect label="성별" onChange={handleGender} />
       <CustomInput label="휴대전화" onChange={handlePhone} />
       <ConfirmBtn
         label="가입하기"
@@ -45,6 +50,7 @@ const SignUp = (props) => {
           password === "" ||
           passwordConfirm === "" ||
           birthday === "" ||
+          gender === "" ||
           phone === ""
             ? true
             : false
