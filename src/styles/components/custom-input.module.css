@@ -1,10 +1,18 @@
 .input {
-  width: 384px;
-  height: 40px;
-  left: 528px;
-  top: 348px;
-
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 1rem;
   background: #ffffff;
   border: 1px solid #b9b9b9;
   border-radius: 5px;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button_container label {
+  font-size: 1.6rem;
+  padding: 1.7rem 0 0.8rem 0;
 }

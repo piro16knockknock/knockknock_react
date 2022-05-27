@@ -26,12 +26,6 @@ a {
   text-decoration: none !important;
 }
 
-/*layout*/
-.layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .cal-profile-img {
   width: 100%;
   height: 100%;

@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "styles/components/custom-input.module.css";
-const CustomInput = (props) => {
+const CustomInput = ({ label, onChange }) => {
   return (
-    <div>
-      <label htmlFor={styles.input}>아이디</label>
-      <input type="text" className={styles.input} />
+    <div className={styles.button_container}>
+      <label htmlFor={styles.input}>{label}</label>
+      <input
+        type="text"
+        className={styles.input}
+        onChange={(e) => onChange(e)}
+      />
     </div>
   );
 };
