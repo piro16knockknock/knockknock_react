@@ -7,7 +7,8 @@ const getImagesPath = (path) =>{
 }
 
 export const ICONS = {
-    LOGO: getIconsPath('logo_box_b.svg'),
+    LOGO: getIconsPath('logo_box_b.svg'),    
+    SIDE_LEFT_ARROW: getIconsPath('side_left_arrow.svg'),
     LEFT_ARROW: getIconsPath('left_arrow.svg'),
     RIGHT_ARROW: getIconsPath('right_arrow.svg'),
     SMALL_LOGO: getIconsPath('logo.svg'),
