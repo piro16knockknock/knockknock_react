@@ -7,6 +7,8 @@ const getImagesPath = (path) =>{
 }
 
 export const ICONS = {
+    LOGO: getIconsPath('logo_box_b.svg'),
+    SMALL_LOGO: getIconsPath('logo.svg'),
     NAVER: getIconsPath('naver.png'),
     KAKAO: getIconsPath('kakao.png'),
     GOOGLE: getIconsPath('google.png'),

@@ -7,13 +7,13 @@ import {
   MdOutlinePeople,
 } from "react-icons/md";
 import Footer from "components/layout/footer";
-
+import { ICONS } from "lib/assets";
 const RestIntro = () => {
   return (
     <>
       <div id="intro-ment">
         <div style={{ width: "5rem", height: "5rem", filter: "grayscale(1)" }}>
-          <img alt="logo" src="./images/logo.svg" />
+          <img alt="logo" src={ICONS.SMALL_LOGO} />
         </div>
         <h4>KNOCK/KNOCK</h4>
         <h5>"우리 노크정도는 하고 살자고요!"</h5>

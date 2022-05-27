@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { ICONS } from "lib/assets";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Header = () => {
     <Navbar bg="white" expand="lg">
       <Container id="container">
         <Navbar.Brand id="navbar-brand" onClick={() => navigate("/")}>
-          <img alt="logo" src="/images/logo_box_b.svg" /> Knock/Knock
+          <img alt="logo" src={ICONS.LOGO} /> Knock/Knock
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
