@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "styles/layout/header.module.css";
 import { ICONS } from "lib/assets";
 import NavBox from "./nav-box";
+import MediaNav from "./media-nav";
 
 const livingNav = [
   {
@@ -34,6 +35,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [livingShow, setLivingShow] = useState(false);
   const [settingShow, setSettingShow] = useState(false);
+  const [mediaNavShow, setMediaNavShow] = useState(false);
 
   const handleLivingClose = (e) => {
     if (e.target.className !== `living-nav-box`) {
@@ -91,11 +93,22 @@ const Header = () => {
             {settingShow && <NavBox category="setting" list={settingNav} />}
           </li>
         </ul>
-
         <ul className={styles[`right-nav`]}>
           <li onClick={() => navigate("/login")}>로그인</li>
           <li onClick={() => navigate("/mypage")}>마이페이지</li>
         </ul>
+        <div className={styles[`media-nav`]}>
+          <img
+            onClick={() => {
+              setMediaNavShow((p) => !p);
+            }}
+            width={30}
+            height={30}
+            src={ICONS.SETTING}
+            alt="setting icon"
+          />
+          {mediaNavShow && <MediaNav />}
+        </div>
       </nav>
     </header>
   );

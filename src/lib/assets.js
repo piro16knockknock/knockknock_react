@@ -21,4 +21,5 @@ export const ICONS = {
     BORDER_PLUS: getIconsPath('border_plus.svg'),
     CLOSE: getIconsPath('close.svg'),
     DOWN_ARROW: getIconsPath('down_arrow.svg'),
+    SETTING: getIconsPath('setting.svg')
 }
