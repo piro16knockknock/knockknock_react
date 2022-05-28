@@ -3,7 +3,7 @@ import { ICONS } from "lib/assets";
 import styles from "styles/components/modal.module.css";
 import Pie from "components/pie";
 
-const Modal = forwardRef(({ show = true, setShow }, ref) => {
+const Modal = forwardRef(({ data = { data }, show = true, setShow }, ref) => {
   useEffect(() => {});
   return (
     <>
@@ -17,11 +17,11 @@ const Modal = forwardRef(({ show = true, setShow }, ref) => {
             <div className={styles[`profile-box`]}>
               <img
                 className={styles[`profile-img`]}
-                src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=301&q=80"
+                src={`${data[`profile_img`]}`}
                 alt="profile"
               />
               <div className={styles[`name`]}>
-                <span>승빈</span>
+                <span>{data[`nick_name`]}</span>
               </div>
             </div>
             <div className={styles[`title`]}>

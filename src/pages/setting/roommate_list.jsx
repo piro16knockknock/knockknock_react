@@ -37,6 +37,7 @@ const RoommateList = (props) => {
       !modal.current.contains(e.target) &&
       e.target !== openBtn.current
     ) {
+      console.log("here");
       setModalShow(false);
       return;
     }
@@ -84,15 +85,15 @@ const RoommateList = (props) => {
                     <span className={styles[`name`]}>
                       {roommate["nick_name"]}
                     </span>
-                    <ModalBtn
-                      ref={openBtn}
-                      onClick={() => setModalShow(true)}
-                      label="프로필 보기"
-                    />
                   </div>
                 );
               })}
             </div>
+            <ModalBtn
+              ref={openBtn}
+              onClick={() => setModalShow(true)}
+              label="프로필 보기"
+            />
           </div>
           <button
             className={
@@ -108,7 +109,12 @@ const RoommateList = (props) => {
             />
           </button>
         </div>
-        <Modal ref={modal} show={modalShow} setShow={setModalShow} />
+        <Modal
+          data={datas[index]}
+          ref={modal}
+          show={modalShow}
+          setShow={setModalShow}
+        />
       </section>
     </>
   );
