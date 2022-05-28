@@ -1,20 +1,21 @@
 import React from "react";
 import RestIntro from "./rest_intro";
-import { Link } from "react-router-dom";
-import { Translate } from "@material-ui/icons";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "styles/intro/intro-not-login.module.css";
+import { IMAGES } from "lib/assets";
 
-const IntroNotLogin = (props) => {
+const IntroNotLogin = () => {
+  const navigator = useNavigate();
   return (
     <>
       <div
-        id="intro-main-notlog"
-        className="intro-main-notlog"
+        className={styles[`intro-main-notlog`]}
         style={{ height: "100vh", backgroundColor: "#FDF4E8" }}
       >
-        <div id="intro-main-notlog-cnt" className="intro-main-cnt cnt-padding">
+        <div className={`${styles[`intro-main-cnt`]} ${styles[`cnt-padding`]}`}>
           <div style={{ zIndex: 3, position: "relative" }}>
             <h5>룸메이트와의 쾌적하고 편안한 생활 지킴이</h5>
-            <h1 id="knock_left">KNOCK</h1>
+            <h1 className={styles[`knock_left`]}>KNOCK</h1>
           </div>
 
           <p style={{ zIndex: 3, position: "relative" }}>
@@ -24,17 +25,19 @@ const IntroNotLogin = (props) => {
             지금 <span>노크노크</span>를 시작해보세요!
           </p>
 
-          <div className="door-img-box" style={{ zIndex: 2 }}>
-            <Link to="/login">
-              <img
-                alt="door"
-                src="/images/knock_door.png"
-                style={{ width: "55rem" }}
-              />
-            </Link>
+          <div className={styles[`door-img-box`]} style={{ zIndex: 2 }}>
+            <img
+              onClick={() => navigator("/login")}
+              alt="door"
+              src={IMAGES.DOOR}
+              className={styles[`intro-door`]}
+            />
           </div>
           <div className="text-end" style={{ zIndex: 3, position: "relative" }}>
-            <h1 id="knock_right" style={{ paddingTop: "5rem" }}>
+            <h1
+              className={styles[`knock_right`]}
+              style={{ paddingTop: "7rem" }}
+            >
               KNOCK
             </h1>
           </div>

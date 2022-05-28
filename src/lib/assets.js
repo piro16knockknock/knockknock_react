@@ -6,6 +6,11 @@ const getImagesPath = (path) =>{
     return process.env.PUBLIC_URL + `/images/${path}`;
 }
 
+export const IMAGES = {
+    DOOR: getImagesPath('knock_door.png'),
+
+}
+
 export const ICONS = {
     LOGO: getIconsPath('logo_box_b.svg'),    
     SIDE_LEFT_ARROW: getIconsPath('side_left_arrow.svg'),
