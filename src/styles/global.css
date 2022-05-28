@@ -26,6 +26,9 @@ a {
   text-decoration: none !important;
 }
 
+.layout {
+  margin-top: 8rem;
+}
 .cal-profile-img {
   width: 100%;
   height: 100%;

@@ -20,4 +20,5 @@ export const ICONS = {
     PLUS: getIconsPath('plus.svg'),
     BORDER_PLUS: getIconsPath('border_plus.svg'),
     CLOSE: getIconsPath('close.svg'),
+    DOWN_ARROW: getIconsPath('down_arrow.svg'),
 }
