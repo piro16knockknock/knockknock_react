@@ -19,4 +19,5 @@ export const ICONS = {
     PENCIL: getIconsPath('pencil.svg'),
     PLUS: getIconsPath('plus.svg'),
     BORDER_PLUS: getIconsPath('border_plus.svg'),
+    CLOSE: getIconsPath('close.svg'),
 }

@@ -1,13 +1,37 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ICONS } from "lib/assets";
 import { roommateList } from "lib/dummy_roommate";
 import styles from "styles/setting/roommate_list.module.css";
 import ModalBtn from "components/setting/modal-btn";
 import SideMenu from "components/layout/side-menu";
 import { setting } from "lib/side-menu-routes";
+import Modal from "components/modal";
+
 const RoommateList = (props) => {
   const carouselRef = useRef();
+  const [modalShow, setModalShow] = useState(false);
   const handleLeft = () => {};
+  const modal = useRef();
+  const openBtn = useRef();
+
+  const handleCloseModal = (e) => {
+    if (
+      modal.current &&
+      !modal.current.contains(e.target) &&
+      e.target !== openBtn.current
+    ) {
+      setModalShow(false);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleCloseModal);
+    return () => {
+      window.removeEventListener("click", handleCloseModal);
+    };
+  }, []);
+
   return (
     <>
       <SideMenu {...setting} />
@@ -30,7 +54,11 @@ const RoommateList = (props) => {
                 alt="profile"
               />
               <span className={styles[`name`]}>세윤</span>
-              <ModalBtn label="프로필 보기" />
+              <ModalBtn
+                ref={openBtn}
+                onClick={() => setModalShow(true)}
+                label="프로필 보기"
+              />
             </div>
           </div>
           <button>
@@ -42,6 +70,7 @@ const RoommateList = (props) => {
             />
           </button>
         </div>
+        <Modal ref={modal} show={modalShow} setShow={setModalShow} />
       </section>
     </>
   );
