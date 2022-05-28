@@ -1,6 +1,6 @@
 .container {
   margin: 0 5rem 5rem 5rem;
-  height: 20rem;
+  height: 22rem;
   overflow: auto;
 }
 .title {
@@ -11,4 +11,20 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px solid #c4c4c4;
+}
+
+.pies {
+  display: flex;
+  justify-content: space-between;
+}
+.pies > li {
+  text-align: center;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pies > li > span {
+  font-size: 1.6rem;
+  margin-top: 1rem;
 }

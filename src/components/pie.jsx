@@ -9,7 +9,7 @@ const Pie = ({
 }) => {
   return (
     <div
-      className={`${styles[`pie`]} ${styles[`animate`]}`}
+      className={`${styles[`pie`]} ${styles[`animate`]} ${styles[`no-round`]}`}
       style={{
         "--p": `${percentage}`,
         "--b": `${barSize}px`,
