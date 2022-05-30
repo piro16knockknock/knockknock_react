@@ -4,7 +4,6 @@ import styles from "styles/components/modal.module.css";
 import Pie from "components/pie";
 
 const Modal = forwardRef(({ data, show = true, setShow }, ref) => {
-  useEffect(() => {});
   return (
     <>
       {show && (

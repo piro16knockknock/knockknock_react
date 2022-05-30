@@ -1,4 +1,5 @@
 .modal {
+  z-index: 999;
   position: fixed;
   max-width: 50rem;
   min-width: 40rem;
@@ -11,6 +12,7 @@
   padding: 4rem 6rem;
 }
 .modal-background::before {
+  z-index: 999;
   position: fixed;
   content: "";
   top: 0;
@@ -35,6 +37,7 @@
 
 .profile-box {
   margin: 5rem;
+  text-align: center;
 }
 .profile-img {
   width: 9.1rem;
