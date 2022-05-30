@@ -1,139 +1,53 @@
-@import "./myhome_detail.module.css";
+@value sectionTitle from "styles/sizes.css";
 
-.roommate_list {
+.container {
+  margin: auto;
+  padding: 10rem 20rem;
+  width: 90rem;
+  text-align: center;
+}
+
+.title {
+  font-size: sectionTitle;
+  font-weight: bold;
+}
+
+.container > div {
   display: flex;
+  justify-content: space-between;
+
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 1.3rem;
-}
-
-.roommate_list__title {
-  margin: 5rem 0 0 0;
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-/*룸메이트가 없을 때*/
-.roommate_list__empty {
-  padding-top: 3rem;
-  font-size: 1.5rem;
 }
 
 /*캐러셀*/
-.roommate_list__carousel {
-  display: flex;
-  align-items: center;
-}
-.roommate_list__carousel_left,
-.roommate_list__carousel_right {
-  font-size: 5rem;
-  transition: 0.2s color ease-in-out;
-  color: rgb(255, 197, 109);
-}
-.roommate_list__carousel_left:hover,
-.roommate_list__carousel_right:hover {
-  color: red;
-  cursor: pointer;
-}
-
-.roommate_list__window {
-  position: relative;
-  width: 23.2rem;
+.carousel {
   overflow: hidden;
-  margin: 2rem 6rem;
+  width: 27rem;
 }
 
-.roommate_list__container {
-  display: flex;
-  /*position: absolute;
-    left: 50%;
-    transform: translateX(-13.8rem);*/
+.hidden {
+  visibility: hidden;
 }
-
-/*프로필 li*/
-.roommate_list__user {
-  margin: 0 1rem;
+.carousel-container {
   display: flex;
+  transition: all 0.4s ease-in;
+}
+.roommate {
+  display: flex;
+  flex: 0 0 27rem;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  width: 25rem;
 }
-
-.roommate_list__user img {
-  height: 22rem;
-  width: 22rem;
-  border-radius: 50%;
-  margin-bottom: 2rem;
-}
-
-.roommate_list__user > i {
-  font-size: 22rem;
-  height: 22rem;
-  width: 22rem;
-  margin-bottom: 2rem;
-}
-
-.roommate_list__user__name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.roommate_list__btn {
-  text-align: center;
-  border: 0.2rem solid slategray;
-  padding: 0.8rem 5rem;
-  border-radius: 5rem;
-  font-size: 1.3rem;
-}
-
-.roommate_list__btn:hover {
-  background-color: slategray;
-  color: white;
-  cursor: pointer;
-}
-
-.roommate_list__btn_tomato {
-  border: 0.2rem solid tomato;
-  margin-top: 2rem;
-  color: tomato;
-  margin-bottom: 2rem;
-}
-
-.roommate_list__btn_tomato:hover {
-  background-color: tomato;
-  color: white;
-}
-
-/*modal*/
-.roommate_list__modal {
-  padding: 4rem 5rem;
-  height: 60rem;
-}
-
-.roommate_list__modal_profile img {
-  width: 11rem;
-  height: 11rem;
+.profile-img {
+  width: 24.5rem;
+  height: 24.5rem;
+  object-fit: cover;
+  margin: 8.4rem 0;
   border-radius: 50%;
 }
 
-.roommate_list__modal_profile i {
-  font-size: 8rem;
-}
-
-.roommate_list__modal_profile p {
-  margin-top: 1rem;
-  font-size: 2rem;
-  font-weight: 800;
-}
-
-.roommate_list__modal_title {
-  padding: 3rem 0;
-}
-
-.roommate_list__modal_title p {
-  font-size: 1.6rem;
-  font-weight: 600;
+.name {
+  font-size: 2.2rem;
+  padding-bottom: 2.9rem;
 }

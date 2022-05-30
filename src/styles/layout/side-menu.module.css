@@ -1,0 +1,23 @@
+@value knockGreen from "styles/colors.css";
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+}
+
+.nav li {
+  margin-right: 1rem;
+}
+.nav img {
+  margin-right: 1rem;
+}
+
+.highlight {
+  color: knockGreen;
+}
+
+.nav li:not(:first-child):hover {
+  cursor: pointer;
+}

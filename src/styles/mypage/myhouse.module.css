@@ -1,0 +1,37 @@
+.container {
+  height: 20rem;
+  overflow: auto;
+  margin: 0 5rem 5rem 5rem;
+}
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #c4c4c4;
+}
+
+.move-out {
+  border: 0.1rem solid #ff6262;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  color: #ff6262;
+  border-radius: 3rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.move-out:hover {
+  background-color: #ff6262;
+  color: white;
+}
+
+.house {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
