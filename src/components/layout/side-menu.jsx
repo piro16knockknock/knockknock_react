@@ -36,4 +36,4 @@ const SideMenu = ({ largeCate, smallCates }) => {
   );
 };
 
-export default SideMenu;
+export default React.memo(SideMenu);

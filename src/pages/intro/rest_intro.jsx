@@ -76,7 +76,7 @@ const RestIntro = () => {
       </div>
 
       <div id="intro-service" style={{ backgroundColor: "#eee" }}>
-        <div id="intro-service-text" classNameName="text-center ">
+        <div id="intro-service-text" className="text-center ">
           <h5>이제는 간편하고 평화롭게!</h5>
           <h6>
             <span>노크노크</span>와 함께라면 할 수 있어요!
