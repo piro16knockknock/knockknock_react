@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "styles/mypage/myroommate.module.css";
 import { ICONS } from "lib/assets";
 import { roommateList } from "lib/dummy_roommate";
-import Modal from "components/modal";
+import Modal from "components/setting/modal-profile";
 
 const MyRoommate = (props) => {
   const [modalShow, setModalShow] = useState(false);

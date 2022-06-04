@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ModalBtn from "components/setting/modal-btn";
 import { ICONS } from "lib/assets";
-import Modal from "components/modal";
+import Modal from "components/setting/modal-profile";
 import styles from "styles/setting/roommate_list.module.css";
 
 const RoommateCarousel = ({ datas }) => {
@@ -48,7 +48,6 @@ const RoommateCarousel = ({ datas }) => {
   }, []);
   return (
     <>
-      {" "}
       <div>
         <button
           className={index === 0 ? `${styles[`hidden`]}` : undefined}
