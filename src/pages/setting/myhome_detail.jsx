@@ -6,12 +6,14 @@ import { ICONS } from "lib/assets";
 import SelectBox from "components/setting/select-box";
 import DateInput from "components/setting/date-input";
 import { useNavigate } from "react-router-dom";
+import Modal from "components/setting/modal-search";
 const MyHomeDetail = (props) => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("전세");
   return (
     <>
       <SideMenu {...setting} />
+      <Modal />
       <section className={styles[`container`]}>
         <section>
           <h3 className={styles[`title`]}>집 정보</h3>

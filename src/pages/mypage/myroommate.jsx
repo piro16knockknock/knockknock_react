@@ -3,25 +3,14 @@ import styles from "styles/mypage/myroommate.module.css";
 import { ICONS } from "lib/assets";
 import { roommateList } from "lib/dummy_roommate";
 import Modal from "components/setting/modal-profile";
+import useModal from "hook/useModal";
 
 const MyRoommate = (props) => {
-  const [modalShow, setModalShow] = useState(false);
   const [datas, setDatas] = useState([]);
   const [index, setIndex] = useState(0);
-
-  const modal = useRef();
-  const openBtn = useRef();
-
-  const handleCloseModal = (e) => {
-    if (
-      modal.current &&
-      !modal.current.contains(e.target) &&
-      e.target.className !== styles[`info-edit-btn`]
-    ) {
-      setModalShow(false);
-      return;
-    }
-  };
+  const { modalShow, modal, setModalShow, handleCloseModal } = useModal({
+    className: styles[`info-edit-btn`],
+  });
 
   useEffect(() => {
     setDatas(roommateList);
