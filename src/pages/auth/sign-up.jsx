@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomInput from "components/auth/custom-signUp-input";
 import common from "styles/auth/common.module.css";
 import ConfirmBtn from "components/auth/confirm-btn";
@@ -27,14 +27,30 @@ const birthdayConfirm = {
 };
 
 const SignUp = () => {
+  const [canSubmit, setCanSubmit] = useState(true);
   const {
     register,
+    reset,
+    watch,
     getValues,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  useEffect(() => {
+    const subscription = watch((values) => {
+      let check = false;
+      Object.keys(values).forEach((value) => {
+        if (values[value] === "") check = true || check;
+        else check = check || false;
+      });
+      setCanSubmit(check);
+    });
+    return () => subscription.unsubscribe();
+  }, [watch]);
+
   const onSubmit = (data) => {
     console.log(data);
+    reset();
   };
 
   const rePasswordConfirm = {
@@ -107,7 +123,7 @@ const SignUp = () => {
       />
       <p className={common[`error`]}>{errors.phone?.message}</p>
 
-      <ConfirmBtn label="가입하기" />
+      <ConfirmBtn label="가입하기" canSubmit={canSubmit} />
     </form>
   );
 };
