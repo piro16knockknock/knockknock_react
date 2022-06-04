@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "styles/mypage/myroommate.module.css";
 import { ICONS } from "lib/assets";
 import { roommateList } from "lib/dummy_roommate";

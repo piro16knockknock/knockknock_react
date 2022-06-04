@@ -10,7 +10,7 @@ const ModalHeader = ({ setShow }) => {
     </>
   );
 };
-const ModalSearch = forwardRef(({ data, show = true, setShow }, ref) => {
+const ModalSearch = forwardRef(({ show = true, setShow }, ref) => {
   return (
     <>
       {show && (

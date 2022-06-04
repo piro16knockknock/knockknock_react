@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SideMenu from "components/layout/side-menu";
 import styles from "styles/setting/myhome_detail.module.css";
 import { setting } from "lib/side-menu-routes";
@@ -7,13 +7,25 @@ import SelectBox from "components/setting/select-box";
 import DateInput from "components/setting/date-input";
 import { useNavigate } from "react-router-dom";
 import Modal from "components/setting/modal-search";
+import useModal from "hook/useModal";
+
 const MyHomeDetail = (props) => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("전세");
+  const { modalShow, modal, setModalShow, handleCloseModal } = useModal({
+    className: styles[`plus`],
+  });
+
+  useEffect(() => {
+    window.addEventListener("click", handleCloseModal);
+    return () => {
+      window.removeEventListener("click", handleCloseModal);
+    };
+  }, []);
   return (
     <>
       <SideMenu {...setting} />
-      <Modal />
+      <Modal ref={modal} show={modalShow} setShow={setModalShow} />
       <section className={styles[`container`]}>
         <section>
           <h3 className={styles[`title`]}>집 정보</h3>
@@ -63,7 +75,12 @@ const MyHomeDetail = (props) => {
               <span className={styles[`name`]}>세윤</span>
             </li>
             <li>
-              <img className={styles[`plus`]} src={ICONS.PLUS} alt="add" />
+              <img
+                onClick={() => setModalShow(true)}
+                className={styles[`plus`]}
+                src={ICONS.PLUS}
+                alt="add"
+              />
             </li>
           </ul>
         </section>
