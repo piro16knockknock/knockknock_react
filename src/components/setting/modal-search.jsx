@@ -13,7 +13,7 @@ const ModalHeader = ({ setShow }) => {
   );
 };
 
-const ModalBody = () => {
+const ModalBody = ({ setShow }) => {
   return <ModalSearchInput />;
 };
 
@@ -24,7 +24,7 @@ const ModalSearch = forwardRef(({ show = true, setShow }, ref) => {
         <Modal
           header={<ModalHeader setShow={setShow} />}
           body={<ModalBody />}
-          footer={<ModalSearchFooter />}
+          footer={<ModalSearchFooter setShow={setShow} />}
           ref={ref}
           height="40%"
         />

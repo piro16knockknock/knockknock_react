@@ -24,17 +24,25 @@
   align-items: center;
 }
 
-.result > li {
+.result {
   display: flex;
-  margin-top: 1rem;
   border: 1px solid knockGreen;
   padding: 1rem 2.4rem;
+  margin-top: 1rem;
   border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease-in;
+}
+
+.result > div,
+.result-clicked > div {
+  display: flex;
   align-items: center;
   font-size: 1.6rem;
-  transition: background-color 0.2s ease-in-out;
 }
-.result > li > img {
+.result > div > img,
+.result-clicked > div > img {
   object-fit: cover;
   border-radius: 50%;
   width: 4.3rem;
@@ -42,7 +50,19 @@
   margin-right: 1rem;
 }
 
-.result > li:hover {
+.result:hover {
   cursor: pointer;
   background-color: knockGreen;
+}
+
+.result-clicked {
+  cursor: pointer;
+  background-color: knockGreen;
+  display: flex;
+  border: 1px solid knockGreen;
+  padding: 1rem 2.4rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
 }

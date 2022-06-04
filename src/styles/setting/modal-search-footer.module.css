@@ -13,3 +13,7 @@
 .btn-row > span:first-child {
   color: #ff6745;
 }
+
+.btn-row > span:hover {
+  cursor: pointer;
+}

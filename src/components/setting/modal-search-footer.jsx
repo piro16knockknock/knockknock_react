@@ -1,10 +1,10 @@
 import styles from "styles/setting/modal-search-footer.module.css";
 
-const ModalSearchFooter = (props) => {
+const ModalSearchFooter = ({ setShow }) => {
   return (
     <div className={styles[`btn-row`]}>
-      <span>취소</span>
-      <span>초대</span>
+      <span onClick={() => setShow(false)}>취소</span>
+      <span onClick={() => setShow(false)}>초대</span>
     </div>
   );
 };
