@@ -1,0 +1,48 @@
+@value knockGreen from "styles/colors.css";
+
+.input {
+  display: flex;
+  margin-top: 1.5rem;
+}
+.input > input {
+  background: #f2f2f2;
+  border: 1px solid knockGreen;
+  padding: 1.8rem 2.4rem;
+  font-size: 1.6rem;
+  flex-basis: 100%;
+  border-radius: 5px;
+}
+
+.input > div {
+  border: 1px solid knockGreen;
+  border-radius: 5px;
+  display: flex;
+  width: 7rem;
+  padding: 0.8rem;
+  margin-left: 0.8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.result > li {
+  display: flex;
+  margin-top: 1rem;
+  border: 1px solid knockGreen;
+  padding: 1rem 2.4rem;
+  border-radius: 5px;
+  align-items: center;
+  font-size: 1.6rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.result > li > img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 4.3rem;
+  height: 4.3rem;
+  margin-right: 1rem;
+}
+
+.result > li:hover {
+  cursor: pointer;
+  background-color: knockGreen;
+}
