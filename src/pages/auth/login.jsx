@@ -17,9 +17,10 @@ const Login = () => {
   return (
     <section className={common.container}>
       <p className={common.title}>로그인</p>
-      <CustomInput label="아이디" value={id} onChange={handleId} />
+      <CustomInput label="아이디" type="text" value={id} onChange={handleId} />
       <CustomInput
         label="비밀번호"
+        type="password"
         value={password}
         onChange={handlePassword}
       />

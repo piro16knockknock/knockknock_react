@@ -1,14 +1,23 @@
 import React from "react";
 import styles from "styles/auth/custom-input.module.css";
-const CustomInput = ({ label, type, value, onChange }) => {
+
+const CustomInput = ({
+  type = "text",
+  label,
+  eLabel,
+  register,
+  confirm,
+  ...rest
+}) => {
   return (
     <div className={styles.button_container}>
       <label htmlFor={styles.input}>{label}</label>
       <input
+        maxLength={20}
+        {...register(`${eLabel}`, confirm)}
         type={type}
-        value={value}
         className={styles.input}
-        onChange={onChange}
+        autoComplete="false"
       />
     </div>
   );

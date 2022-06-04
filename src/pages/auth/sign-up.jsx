@@ -1,55 +1,113 @@
-import React, { useState } from "react";
-import CustomInput from "components/auth/custom-input";
+import React, { useEffect, useRef } from "react";
+import CustomInput from "components/auth/custom-signUp-input";
 import common from "styles/auth/common.module.css";
 import ConfirmBtn from "components/auth/confirm-btn";
 import CustomSelect from "components/auth/custom-select";
-import useInput from "hook/useInput";
 import { useForm } from "react-hook-form";
 
-const SignUp = (props) => {
-  const { handleSubmit } = useForm();
-  const { value: gender, onChange: handleGender } = useInput("");
-  const { value: id, onChange: handleId } = useInput("");
-  const { value: password, onChange: handlePassword } = useInput("");
-  const { value: passwordConfirm, onChange: handlePasswordConfirm } =
-    useInput("");
-  const { value: birthday, onChange: handleBirthday } = useInput("");
-  const { value: phone, onChange: handlePhone } = useInput("");
+const idConfirm = {
+  required: "필수 항목입니다.",
+  minLength: { value: 4, message: "4자 이상 입력해주세요" },
+  pattern: {
+    value: /[a-z0-9_]{4,10}$/,
+    message: "아이디는 영어 혹은 숫자로 이루어져야합니다.",
+  },
+};
+
+const passwordConfirm = {
+  required: "필수 항목입니다.",
+  pattern: {
+    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+    message: "최소 8자 이상, 문자와 숫자를 포함해주세요",
+  },
+};
+
+const birthdayConfirm = {
+  required: "필수 항목입니다.",
+};
+
+const SignUp = () => {
+  const {
+    register,
+    getValues,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  const rePasswordConfirm = {
+    required: "필수 항목입니다.",
+    validate: {
+      matchPassword: (value) => {
+        const { password } = getValues();
+        return password === value || "비밀번호가 일치하지 않습니다.";
+      },
+    },
+  };
 
   return (
-    <form className={common.container}>
+    <form onSubmit={handleSubmit(onSubmit)} className={common.container}>
       <p className={common.title}>회원가입</p>
-      <CustomInput label="아이디" value={id} onChange={handleId} />
+      <CustomInput
+        label="아이디"
+        eLabel="id"
+        register={register}
+        confirm={idConfirm}
+        type="text"
+        required
+      />
+      <p className={common[`error`]}>{errors.id?.message}</p>
       <CustomInput
         label="비밀번호"
-        value={password}
-        onChange={handlePassword}
+        eLabel="password"
+        register={register}
+        confirm={passwordConfirm}
+        type="password"
+        required
       />
+      <p className={common[`error`]}>{errors.password?.message}</p>
+
       <CustomInput
         label="비밀번호 재확인"
-        value={passwordConfirm}
-        onChange={handlePasswordConfirm}
+        eLabel="rePassword"
+        register={register}
+        type="password"
+        confirm={rePasswordConfirm}
+        required
       />
+      <p className={common[`error`]}>{errors.rePassword?.message}</p>
+
       <CustomInput
         label="생년월일"
-        value={birthday}
-        onChange={handleBirthday}
+        eLabel="birthday"
+        register={register}
+        type="date"
+        confirm={birthdayConfirm}
+        required
       />
-      <CustomSelect label="성별" value={gender} onChange={handleGender} />
-      <CustomInput label="휴대전화" value={phone} onChange={handlePhone} />
-      <ConfirmBtn
-        label="가입하기"
-        canSubmit={
-          id === "" ||
-          password === "" ||
-          passwordConfirm === "" ||
-          birthday === "" ||
-          gender === "" ||
-          phone === ""
-            ? true
-            : false
-        }
+      <p className={common[`error`]}>{errors.birthday?.message}</p>
+
+      <CustomSelect
+        label="성별"
+        eLabel="gender"
+        register={register}
+        confirm={birthdayConfirm}
       />
+      <p className={common[`error`]}>{errors.gender?.message}</p>
+
+      <CustomInput
+        label="휴대전화"
+        eLabel="phone"
+        register={register}
+        type="tel"
+        confirm={birthdayConfirm}
+        required
+      />
+      <p className={common[`error`]}>{errors.phone?.message}</p>
+
+      <ConfirmBtn label="가입하기" />
     </form>
   );
 };
