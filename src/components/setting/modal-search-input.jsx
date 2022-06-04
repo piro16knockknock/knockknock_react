@@ -6,7 +6,7 @@ import { roommateSearch } from "lib/dummy_roommate";
 import Check from "components/icons/check";
 
 const ModalSearchInput = (props) => {
-  const { value, onChange } = useInput();
+  const { value, onChange } = useInput("");
   const [resultList, setResultList] = useState(roommateSearch);
   const [clickedList, setClickedList] = useState({});
 

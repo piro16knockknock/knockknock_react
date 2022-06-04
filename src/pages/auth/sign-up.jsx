@@ -4,43 +4,39 @@ import common from "styles/auth/common.module.css";
 import ConfirmBtn from "components/auth/confirm-btn";
 import CustomSelect from "components/auth/custom-select";
 import useInput from "hook/useInput";
+import { useForm } from "react-hook-form";
+
 const SignUp = (props) => {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [phone, setPhone] = useState("");
-
-  const handleId = (e) => {
-    setId(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handlePasswordConfirm = (e) => {
-    setPasswordConfirm(e.target.value);
-  };
-  const handleBirthday = (e) => {
-    setBirthday(e.target.value);
-  };
-
-  const { value: gender, onChange: handleGender } = useInput();
-
-  const handlePhone = (e) => {
-    setPhone(e.target.value);
-  };
+  const { handleSubmit } = useForm();
+  const { value: gender, onChange: handleGender } = useInput("");
+  const { value: id, onChange: handleId } = useInput("");
+  const { value: password, onChange: handlePassword } = useInput("");
+  const { value: passwordConfirm, onChange: handlePasswordConfirm } =
+    useInput("");
+  const { value: birthday, onChange: handleBirthday } = useInput("");
+  const { value: phone, onChange: handlePhone } = useInput("");
 
   return (
     <form className={common.container}>
       <p className={common.title}>회원가입</p>
-      <CustomInput label="아이디" onChange={handleId} />
-      <CustomInput label="비밀번호" onChange={handlePassword} />
-      <CustomInput label="비밀번호 재확인" onChange={handlePasswordConfirm} />
-      <CustomInput label="생년월일" onChange={handleBirthday} />
+      <CustomInput label="아이디" value={id} onChange={handleId} />
+      <CustomInput
+        label="비밀번호"
+        value={password}
+        onChange={handlePassword}
+      />
+      <CustomInput
+        label="비밀번호 재확인"
+        value={passwordConfirm}
+        onChange={handlePasswordConfirm}
+      />
+      <CustomInput
+        label="생년월일"
+        value={birthday}
+        onChange={handleBirthday}
+      />
       <CustomSelect label="성별" value={gender} onChange={handleGender} />
-      <CustomInput label="휴대전화" onChange={handlePhone} />
+      <CustomInput label="휴대전화" value={phone} onChange={handlePhone} />
       <ConfirmBtn
         label="가입하기"
         canSubmit={
