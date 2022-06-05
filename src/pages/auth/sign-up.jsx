@@ -57,7 +57,7 @@ const SignUp = () => {
     required: "필수 항목입니다.",
     validate: {
       matchPassword: (value) => {
-        const { password } = getValues();
+        const password = getValues("password");
         return password === value || "비밀번호가 일치하지 않습니다.";
       },
     },
