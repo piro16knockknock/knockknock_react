@@ -28,3 +28,8 @@
   padding: 0.2rem 1rem;
   border-radius: 3rem;
 }
+@media screen and (max-width: 800px) {
+  .profile-box {
+    margin-right: 0;
+  }
+}

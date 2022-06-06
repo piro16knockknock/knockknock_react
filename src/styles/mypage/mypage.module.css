@@ -22,3 +22,12 @@
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .section-container {
+    margin-top: 5rem;
+  }
+}
