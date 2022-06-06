@@ -1,15 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import ModalBtn from "components/setting/modal-btn";
 import { ICONS } from "lib/assets";
-import Modal from "components/modal";
+import Modal from "components/setting/modal-profile";
 import styles from "styles/setting/roommate_list.module.css";
+import modalBtn from "styles/setting/modal-btn.module.css";
+import useModal from "hook/useModal";
 
 const RoommateCarousel = ({ datas }) => {
   const carouselRef = useRef();
   const [index, setIndex] = useState(0);
-
+  const { modalShow, modal, setModalShow, handleCloseModal } = useModal({
+    className: modalBtn[`button`],
+  });
   const [margin, setMargin] = useState(0);
-  const [modalShow, setModalShow] = useState(false);
   const handleLeft = () => {
     setIndex((p) => p - 1);
     if (index === 0) {
@@ -25,21 +28,6 @@ const RoommateCarousel = ({ datas }) => {
     setMargin((p) => p - 27);
   };
 
-  const modal = useRef();
-  const openBtn = useRef();
-
-  const handleCloseModal = (e) => {
-    if (
-      modal.current &&
-      !modal.current.contains(e.target) &&
-      e.target !== openBtn.current
-    ) {
-      console.log("here");
-      setModalShow(false);
-      return;
-    }
-  };
-
   useEffect(() => {
     window.addEventListener("click", handleCloseModal);
     return () => {
@@ -48,7 +36,6 @@ const RoommateCarousel = ({ datas }) => {
   }, []);
   return (
     <>
-      {" "}
       <div>
         <button
           className={index === 0 ? `${styles[`hidden`]}` : undefined}
@@ -82,11 +69,7 @@ const RoommateCarousel = ({ datas }) => {
               );
             })}
           </div>
-          <ModalBtn
-            ref={openBtn}
-            onClick={() => setModalShow(true)}
-            label="프로필 보기"
-          />
+          <ModalBtn onClick={() => setModalShow(true)} label="프로필 보기" />
         </div>
         <button
           className={

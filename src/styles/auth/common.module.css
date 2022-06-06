@@ -1,5 +1,5 @@
 @value sectionTitle, sectionMaxWidth, sectionMinWidth from "styles/sizes.css";
-@value knockGreen from "styles/colors.css";
+@value knockGreen, errorColor from "styles/colors.css";
 
 .container {
   margin: auto;
@@ -28,4 +28,10 @@
 
 .confirm_btn:disabled {
   background-color: #c9c9c9;
+}
+
+.error {
+  margin-top: 0.5rem;
+  color: errorColor;
+  font-size: 1.6rem;
 }
