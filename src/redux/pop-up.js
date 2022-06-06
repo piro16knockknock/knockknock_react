@@ -3,18 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 export const popUpSlice = createSlice({
   name: "popUp",
   initialState: {
-    value: { show: false, content: "", backgroundColor: "", color: "" },
+    show: false,
+    value: { content: "", backgroundColor: "", color: "", success: true },
   },
   reducers: {
-    signUp: (state, action) => {
+    show: (state, action) => {
+      state.show = true;
       state.value = action.payload;
     },
-    login: (state, action) => {
+    hide: (state, action) => {
+      state.show = false;
       state.value = action.payload;
     },
   },
 });
 
-export const { signUp, login } = popUpSlice.actions;
+export const { show, hide } = popUpSlice.actions;
 
 export default popUpSlice.reducer;

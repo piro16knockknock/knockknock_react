@@ -8,7 +8,7 @@ import ConfirmBtn from "components/auth/confirm-btn";
 import { useNavigate } from "react-router-dom";
 import useInput from "hook/useInput";
 import { useDispatch } from "react-redux";
-import { login } from "redux/pop-up";
+import { show } from "redux/pop-up";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,15 +18,26 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    //성공시
     dispatch(
-      login({
-        show: true,
+      show({
         content: "로그인에 성공했습니다.",
         color: "white",
-        backgroundColor: "green",
+        backgroundColor: styles[`knockGreen`],
+        success: true,
       })
     );
     navigate("/");
+
+    //실패시
+    // dispatch(
+    //   show({
+    //     content: "로그인에 실패했습니다.",
+    //     color: "white",
+    //     backgroundColor: common[`errorColor`],
+    //     success: false,
+    //   })
+    // );
   };
   return (
     <section className={common.container}>
