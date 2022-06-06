@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "styles/auth/common.module.css";
 
-const ConfirmBtn = ({ canSubmit, label }) => {
+const ConfirmBtn = ({ canSubmit, label, handleClick }) => {
   return (
-    <button className={styles.confirm_btn} type="submit" disabled={canSubmit}>
+    <button
+      onClick={handleClick}
+      className={styles.confirm_btn}
+      type="submit"
+      disabled={canSubmit}
+    >
       {label}
     </button>
   );

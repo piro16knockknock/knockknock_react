@@ -1,17 +1,27 @@
 import React from "react";
 import RestIntro from "./rest_intro";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "styles/intro/intro-not-login.module.css";
 import { IMAGES } from "lib/assets";
 import Toast from "components/toast";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { signUp } from "redux/pop-up";
 
 const IntroNotLogin = () => {
   const navigator = useNavigate();
-  let popUpShow = useSelector((state) => state.popUp.value);
+  const popUpShow = useSelector((state) => state.popUp.value);
+  const dispatch = useDispatch();
+
   return (
     <>
-      {popUpShow.show && <Toast content={popUpShow.content} />}
+      {popUpShow.show && (
+        <Toast
+          content={popUpShow.content}
+          color={popUpShow.color}
+          backgroundColor={popUpShow.backgroundColor}
+        />
+      )}
       <div
         className={styles[`intro-main-notlog`]}
         style={{ height: "100vh", backgroundColor: "#FDF4E8" }}

@@ -7,13 +7,27 @@ import CustomInput from "components/auth/custom-input";
 import ConfirmBtn from "components/auth/confirm-btn";
 import { useNavigate } from "react-router-dom";
 import useInput from "hook/useInput";
+import { useDispatch } from "react-redux";
+import { login } from "redux/pop-up";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const { value: id, onChange: handleId } = useInput("");
   const { value: password, onChange: handlePassword } = useInput("");
+  const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(
+      login({
+        show: true,
+        content: "로그인에 성공했습니다.",
+        color: "white",
+        backgroundColor: "green",
+      })
+    );
+    navigate("/");
+  };
   return (
     <section className={common.container}>
       <p className={common.title}>로그인</p>
@@ -29,6 +43,7 @@ const Login = () => {
         <span onClick={() => navigate("/sign-up")}>회원가입</span>
       </div>
       <ConfirmBtn
+        handleClick={handleClick}
         label="로그인"
         canSubmit={id === "" || password === "" ? true : false}
       />

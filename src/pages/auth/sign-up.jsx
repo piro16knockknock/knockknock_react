@@ -58,7 +58,14 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     reset();
-    dispatch(signUp({ show: true, content: "회원가입에 성공했습니다." }));
+    dispatch(
+      signUp({
+        show: true,
+        content: "회원가입에 성공했습니다.",
+        color: "white",
+        backgroundColor: "green",
+      })
+    );
     navigator("/");
   };
 
