@@ -4,6 +4,9 @@ import common from "styles/auth/common.module.css";
 import ConfirmBtn from "components/auth/confirm-btn";
 import CustomSelect from "components/auth/custom-select";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signUp } from "redux/pop-up";
 
 const idConfirm = {
   required: "필수 항목입니다.",
@@ -28,6 +31,9 @@ const birthdayConfirm = {
 
 const SignUp = () => {
   const [canSubmit, setCanSubmit] = useState(true);
+  const navigator = useNavigate();
+  const dispatch = useDispatch();
+
   const {
     register,
     reset,
@@ -36,6 +42,7 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   useEffect(() => {
     const subscription = watch((values) => {
       let check = false;
@@ -51,6 +58,8 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     reset();
+    dispatch(signUp({ show: true, content: "회원가입에 성공했습니다." }));
+    navigator("/");
   };
 
   const rePasswordConfirm = {
