@@ -17,11 +17,20 @@ const IntroNotLogin = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (popUpShow) {
-      setTimeout(() => {
+    // let timer;
+    // if (popUpShow) {
+    //   timer = setTimeout(() => {
+    //     dispatch(hide());
+    //   }, 3000);
+    // }
+    return () => {
+      // if (timer) {
+      //   clearTimeout(timer);
+      // }
+      if (popUpShow) {
         dispatch(hide());
-      }, 3000);
-    }
+      }
+    };
   }, []);
 
   return (
