@@ -1,27 +1,15 @@
 import React from "react";
+import styles from "styles/intro/have-home.module.css";
 
 const NoHome = (props) => {
   return (
-    <div>
-      <div
-        style={{
-          zIndex: 3,
-          position: "relative",
-          paddingTop: "1rem",
-        }}
-      >
+    <section className={styles[`main`]}>
+      <div className={styles[`meet`]}>
         <h2 style={{ marginBottom: "1rem" }}>🖐️</h2>
         <h2 style={{ marginBottom: "1rem" }}>user.nick_name님</h2>
         <h2>만나서 반갑습니다!</h2>
       </div>
-      <div
-        style={{
-          zIndex: 3,
-          position: "relative",
-          marginTop: "3rem",
-          marginBottom: "2rem",
-        }}
-      >
+      <div className={styles[`meet`]}>
         <p>
           서비스를 시작하기 전에
           <br />
@@ -42,7 +30,7 @@ const NoHome = (props) => {
           <a href="{% url 'login:mypage' %}">초대 확인</a>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

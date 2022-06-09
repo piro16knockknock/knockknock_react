@@ -22,7 +22,7 @@ const IntroNotLogin = () => {
         dispatch(hide());
       }, 3000);
     }
-  }, []);
+  }, [dispatch, popUpShow]);
 
   return (
     <>

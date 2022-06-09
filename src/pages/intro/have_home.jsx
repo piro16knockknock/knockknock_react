@@ -1,9 +1,9 @@
 import React from "react";
 
 // 유저가 집이 있는 경우
-const HaveHome = (props) => {
+const HaveHome = () => {
   return (
-    <div>
+    <section>
       <div style={{ maxWidth: "46rem" }}>
         <h2>🏡</h2>
         <p>user.nick_name네 집</p>
@@ -13,7 +13,7 @@ const HaveHome = (props) => {
         <p>
           오늘도 노크노크와 함께
           <br />
-          간편하게 평화로운 생활을 즐겨보아요!{" "}
+          간편하게 평화로운 생활을 즐겨보아요!
         </p>
       </div>
       <div style={{ zIndex: 3, position: "relative" }}>
@@ -56,7 +56,7 @@ const HaveHome = (props) => {
           {/* {% endif %} */}
         </div>
       </a>
-    </div>
+    </section>
   );
 };
 
