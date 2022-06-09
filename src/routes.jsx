@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
 import LayoutContainer from "pages/layout";
-const HeaderIntroLogin = lazy(() => import("pages/intro/intro_login"));
-const IntroNotLogin = lazy(() => import("pages/intro/intro_not_login"));
+
+const Intro = lazy(() => import("pages/intro"));
 const Calendar = lazy(() => import("pages/home/calendar"));
 const LivingRule = lazy(() => import("pages/home/living_rule"));
 const Guideline = lazy(() => import("pages/home/guideline"));
@@ -22,13 +22,11 @@ export default function Routes() {
       children: [
         {
           path: "/",
-          element: <IntroNotLogin />,
+          element: <Intro />,
         },
         {
           path: "login",
           element: <Login />,
-          /*로그인 안했으면 IntroNotLogin
-            했으면 IntroLogin */
         },
         {
           path: "sign-up",
