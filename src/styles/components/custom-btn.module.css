@@ -1,0 +1,16 @@
+@value knockOrange from "styles/colors.css";
+
+.btn {
+  font-size: 1.8rem;
+  border: 0.2rem solid knockOrange;
+  padding: 0.8rem 2rem;
+  color: knockOrange;
+  border-radius: 5rem;
+  background-color: white;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  color: white;
+  background-color: knockOrange;
+}

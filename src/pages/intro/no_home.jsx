@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "styles/intro/have-home.module.css";
+import { Link } from "react-router-dom";
+import CustomBtn from "components/custom-btn";
 
 const NoHome = (props) => {
   return (
@@ -17,18 +19,12 @@ const NoHome = (props) => {
         </p>
       </div>
       <div style={{ zIndex: 3, position: "relative" }}>
-        <button
-          style={{ fontSize: "1.5rem", marginTop: "1rem" }}
-          className="btn btn-lg btn-outline-warning rounded-pill bg-white px-4 py-2"
-        >
-          <a>{/* <a> href="{% url 'setting:myhome_register' %}" */}집 등록</a>
-        </button>
-        <button
-          style={{ fontSize: "1.5rem", marginTop: "1rem" }}
-          className="btn btn-lg btn-outline-warning rounded-pill px-4 py-2 bg-white "
-        >
-          <a href="{% url 'login:mypage' %}">초대 확인</a>
-        </button>
+        <Link to="/register">
+          <CustomBtn content="집 등록" />
+        </Link>
+        <Link to="/mypage">
+          <CustomBtn content="초대 확인" />
+        </Link>
       </div>
     </section>
   );

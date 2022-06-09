@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import LayoutContainer from "pages/layout";
 
 const Intro = lazy(() => import("pages/intro"));
+const Register = lazy(() => import("pages/intro/register"));
 const Calendar = lazy(() => import("pages/home/calendar"));
 const LivingRule = lazy(() => import("pages/home/living_rule"));
 const Guideline = lazy(() => import("pages/home/guideline"));
@@ -27,6 +28,10 @@ export default function Routes() {
         {
           path: "login",
           element: <Login />,
+        },
+        {
+          path: "register",
+          element: <Register />,
         },
         {
           path: "sign-up",
