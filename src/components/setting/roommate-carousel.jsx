@@ -33,7 +33,8 @@ const RoommateCarousel = ({ datas }) => {
     return () => {
       window.removeEventListener("click", handleCloseModal);
     };
-  }, []);
+  }, [handleCloseModal]);
+
   return (
     <>
       <div>

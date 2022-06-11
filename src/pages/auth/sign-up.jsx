@@ -99,6 +99,7 @@ const SignUp = () => {
         register={register}
         confirm={idConfirm}
         type="text"
+        placeholder="4자 이상 영어 혹은 숫자"
         required
       />
       <p className={common[`error`]}>{errors.id?.message}</p>
@@ -108,6 +109,7 @@ const SignUp = () => {
         register={register}
         confirm={passwordConfirm}
         type="password"
+        placeholder="8자 이상 문자 숫자 포함"
         required
       />
       <p className={common[`error`]}>{errors.password?.message}</p>
@@ -145,6 +147,7 @@ const SignUp = () => {
         eLabel="phone"
         register={register}
         type="tel"
+        placeholder="000-0000-0000"
         confirm={birthdayConfirm}
         required
       />

@@ -1,0 +1,64 @@
+@value knockOrange, knockGreen from "styles/colors.css";
+
+.main {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  width: 50%;
+  min-width: 10rem;
+}
+
+.main p {
+  font-size: 2rem;
+  margin: 2rem;
+  color: #5e5e5e;
+}
+
+.main .input {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.main .input input {
+  font-size: 2rem;
+  flex-basis: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgba(1, 1, 1, 0.05);
+  border: 0.2rem solid rgb(137, 186, 159);
+}
+
+.main .input button {
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  width: 15rem;
+  transition: all 0.2s ease-in-out;
+  background-color: knockOrange;
+}
+/* .main .input button:hover {
+  background-color: knockGreen;
+} */
+
+.result {
+  width: 100%;
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.2s ease-in;
+}
+
+.result:hover {
+  cursor: pointer;
+  background: knockGreen;
+}
+
+.result-selected {
+  background-color: knockGreen;
+}
+
+.result div svg {
+  margin-right: 1rem;
+}

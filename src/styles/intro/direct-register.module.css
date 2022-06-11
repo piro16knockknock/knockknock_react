@@ -1,0 +1,38 @@
+@value knockGreen from "styles/colors.css";
+.container {
+  margin: auto;
+  padding: 5rem 20rem;
+  max-width: 90rem;
+  min-width: 80rem;
+}
+
+.container > ul {
+  padding-bottom: 2.5rem;
+}
+.title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 0.1rem solid #989898;
+  margin-bottom: 1.6rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.info-row label {
+  width: 13rem;
+  color: #474747;
+}
+
+.name-input {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  width: 33rem;
+}

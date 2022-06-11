@@ -1,0 +1,27 @@
+@value knockGreen from "styles/colors.css";
+
+.nav {
+  font-size: 2rem;
+  display: flex;
+  padding: 7rem 0 2rem 0;
+  margin: 0 10rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.nav > li {
+  padding: 1rem 3rem;
+  margin-right: 1rem;
+}
+
+.nav > li:hover {
+  cursor: pointer;
+  background-color: knockGreen;
+  color: white;
+  border-radius: 0.8rem;
+}
+
+.highlight {
+  background-color: knockGreen;
+  color: white;
+  border-radius: 0.8rem;
+}

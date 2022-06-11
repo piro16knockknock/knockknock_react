@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import HaveHome from "./have_home";
 import NoHome from "./no_home";
 import RestIntro from "./rest_intro";
 
-// have_home과 no_home이 여기로
-
 const IntroLogin = (props) => {
+  const [hasHome, setHasHome] = useState(false);
+  //로그인 백 구현되면 수정
   return (
     <>
       <div
@@ -26,8 +26,7 @@ const IntroLogin = (props) => {
           }}
           className="intro-main-cnt position-relative"
         >
-          {/* <HaveHome /> */}
-          <NoHome />
+          {hasHome ? <HaveHome /> : <NoHome />}
         </div>
       </div>
       <RestIntro />

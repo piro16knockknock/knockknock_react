@@ -7,10 +7,11 @@
   min-width: 40rem;
   background-color: white;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-  inset: 50%;
+  top: 50%;
+  left: 50%;
   width: 60%;
   transform: translate(-50%, -50%);
-  height: 80%;
+  max-height: 80%;
   overflow: auto;
   padding: 4rem 6rem;
 }
