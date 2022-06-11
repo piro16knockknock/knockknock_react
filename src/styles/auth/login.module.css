@@ -1,3 +1,5 @@
+@value knockGreen from "styles/colors.css";
+
 .text_row {
   padding-top: 1rem;
   text-align: right;

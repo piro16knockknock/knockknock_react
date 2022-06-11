@@ -28,4 +28,6 @@ export const ICONS = {
     DOWN_ARROW: getIconsPath('down_arrow.svg'),
     SETTING: getIconsPath('setting.svg'),
     FRIEND_ADD: getIconsPath('friend_add.svg'),
+    SUCCESS: getIconsPath('success.svg'),
+    FAIL: getIconsPath('fail.svg')
 }

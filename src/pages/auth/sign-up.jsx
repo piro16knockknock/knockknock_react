@@ -1,9 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CustomInput from "components/auth/custom-signUp-input";
 import common from "styles/auth/common.module.css";
 import ConfirmBtn from "components/auth/confirm-btn";
 import CustomSelect from "components/auth/custom-select";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { show } from "redux/pop-up";
 
 const idConfirm = {
   required: "필수 항목입니다.",
@@ -28,6 +31,9 @@ const birthdayConfirm = {
 
 const SignUp = () => {
   const [canSubmit, setCanSubmit] = useState(true);
+  const navigator = useNavigate();
+  const dispatch = useDispatch();
+
   const {
     register,
     reset,
@@ -36,6 +42,7 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   useEffect(() => {
     const subscription = watch((values) => {
       let check = false;
@@ -51,6 +58,26 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     reset();
+    //성공시
+    dispatch(
+      show({
+        content: "회원가입에 성공했습니다.",
+        color: "white",
+        backgroundColor: common[`knockGreen`],
+        success: true,
+      })
+    );
+    navigator("/");
+
+    //실패시
+    // dispatch(
+    //   show({
+    //     content: "회원가입에 실패했습니다.",
+    //     color: "white",
+    //     backgroundColor: styles[`errorColor`],
+    //     success: false,
+    //   })
+    // );
   };
 
   const rePasswordConfirm = {
