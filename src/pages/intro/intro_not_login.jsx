@@ -29,8 +29,8 @@ const IntroNotLogin = () => {
       // }
       if (popUpShow) {
         dispatch(hide());
-      }, 3000);
-    }
+      }
+    };
   }, [dispatch, popUpShow]);
 
   return (
