@@ -42,18 +42,27 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const watches = watch(["id", "password", "rePassword"]);
 
   useEffect(() => {
-    const subscription = watch((values) => {
-      let check = false;
-      Object.keys(values).forEach((value) => {
-        if (values[value] === "") check = true || check;
-        else check = check || false;
-      });
+    console.log(watches);
+    let check = false;
+    watches.forEach((value) => {
+      if (value === "") check = true || check;
+      else check = check || false;
+
       setCanSubmit(check);
     });
-    return () => subscription.unsubscribe();
-  }, [watch]);
+    // const subscription = watches((values) => {
+    //   let check = false;
+    //   Object.keys(values).forEach((value) => {
+    //     if (values[value] === "") check = true || check;
+    //     else check = check || false;
+    //   });
+    //   setCanSubmit(check);
+    // });
+    // return () => subscription.unsubscribe();
+  }, [watches]);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -125,31 +134,31 @@ const SignUp = () => {
       <p className={common[`error`]}>{errors.rePassword?.message}</p>
 
       <CustomInput
-        label="생년월일"
+        label="생년월일 (선택)"
         eLabel="birthday"
         register={register}
         type="date"
-        confirm={birthdayConfirm}
-        required
+        // confirm={birthdayConfirm}
+        // required
       />
       <p className={common[`error`]}>{errors.birthday?.message}</p>
 
       <CustomSelect
-        label="성별"
+        label="성별 (선택)"
         eLabel="gender"
         register={register}
-        confirm={birthdayConfirm}
+        // confirm={birthdayConfirm}
       />
       <p className={common[`error`]}>{errors.gender?.message}</p>
 
       <CustomInput
-        label="휴대전화"
+        label="휴대전화 (선택)"
         eLabel="phone"
         register={register}
         type="tel"
         placeholder="000-0000-0000"
-        confirm={birthdayConfirm}
-        required
+        // confirm={birthdayConfirm}
+        // required
       />
       <p className={common[`error`]}>{errors.phone?.message}</p>
 
