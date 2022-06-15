@@ -2,13 +2,31 @@
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-40%, -50%);
+  /* display: block; */
+  transition: transform 1s ease-in;
+  transform-origin: 80% -25%;
+
   cursor: url(../images/knock_cursor.png) 32 37, auto;
 }
-.door-img-box:hover img {
-  transform: scale(104%);
+
+.door-img-box:hover {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+
+  transform-origin: 80% -25%;
+  /* perspective: 800px; */
+
+  transform: perspective(1000px) translate(-50%, -50%) rotateY(135deg);
+
   cursor: url(../images/knock_cursor.png) 32 37, auto;
   opacity: 0.8;
+}
+
+.door-img-box img {
+  width: 80%;
+  object-fit: cover;
 }
 
 .door-img-box a {
