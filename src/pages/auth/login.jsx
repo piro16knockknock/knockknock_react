@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import useInput from "hook/useInput";
 import { useDispatch } from "react-redux";
 import { show } from "redux/pop-up";
+import { authLogin } from "api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,27 +18,38 @@ const Login = () => {
   const { value: password, onChange: handlePassword } = useInput("");
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    //성공시
-    dispatch(
-      show({
-        content: "로그인에 성공했습니다.",
-        color: "white",
-        backgroundColor: styles[`knockGreen`],
-        success: true,
-      })
-    );
-    navigate("/");
+  const handleClick = async () => {
+    const data = {
+      id,
+      password,
+    };
+    await authLogin(data)
+      .then((res) => {
+        console.log("login success", res);
 
-    //실패시
-    // dispatch(
-    //   show({
-    //     content: "로그인에 실패했습니다.",
-    //     color: "white",
-    //     backgroundColor: common[`errorColor`],
-    //     success: false,
-    //   })
-    // );
+        //성공시
+        dispatch(
+          show({
+            content: "로그인에 성공했습니다.",
+            color: "white",
+            backgroundColor: styles[`knockGreen`],
+            success: true,
+          })
+        );
+        navigate("/");
+      })
+      .catch((res) => {
+        console.log("login error", res);
+
+        dispatch(
+          show({
+            content: "로그인에 실패했습니다.",
+            color: "white",
+            backgroundColor: common[`errorColor`],
+            success: false,
+          })
+        );
+      });
   };
   return (
     <section className={common.container}>

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { show } from "redux/pop-up";
+import { authJoin } from "api/auth";
 
 const idConfirm = {
   required: "필수 항목입니다.",
@@ -25,7 +26,7 @@ const passwordConfirm = {
   },
 };
 
-const birthdayConfirm = {
+const requiredConfirm = {
   required: "필수 항목입니다.",
 };
 
@@ -45,7 +46,6 @@ const SignUp = () => {
   const watches = watch(["id", "password", "rePassword"]);
 
   useEffect(() => {
-    console.log(watches);
     let check = false;
     watches.forEach((value) => {
       if (value === "") check = true || check;
@@ -64,29 +64,34 @@ const SignUp = () => {
     // return () => subscription.unsubscribe();
   }, [watches]);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    //console.log(data);
     reset();
     //성공시
-    dispatch(
-      show({
-        content: "회원가입에 성공했습니다.",
-        color: "white",
-        backgroundColor: common[`knockGreen`],
-        success: true,
+    await authJoin(data)
+      .then((res) => {
+        console.log("join success", res);
+        dispatch(
+          show({
+            content: "회원가입에 성공했습니다.",
+            color: "white",
+            backgroundColor: common[`knockGreen`],
+            success: true,
+          })
+        );
+        navigator("/");
       })
-    );
-    navigator("/");
-
-    //실패시
-    // dispatch(
-    //   show({
-    //     content: "회원가입에 실패했습니다.",
-    //     color: "white",
-    //     backgroundColor: styles[`errorColor`],
-    //     success: false,
-    //   })
-    // );
+      .catch((res) => {
+        console.log("join error", res);
+        dispatch(
+          show({
+            content: "회원가입에 실패했습니다.",
+            color: "white",
+            backgroundColor: common[`errorColor`],
+            success: false,
+          })
+        );
+      });
   };
 
   const rePasswordConfirm = {
@@ -132,7 +137,7 @@ const SignUp = () => {
         required
       />
       <p className={common[`error`]}>{errors.rePassword?.message}</p>
-
+      {/* 
       <CustomInput
         label="생년월일 (선택)"
         eLabel="birthday"
@@ -140,6 +145,14 @@ const SignUp = () => {
         type="date"
         // confirm={birthdayConfirm}
         // required
+      /> */}
+      <CustomInput
+        label="이름"
+        eLabel="name"
+        register={register}
+        type="text"
+        confirm={requiredConfirm}
+        required
       />
       <p className={common[`error`]}>{errors.birthday?.message}</p>
 
@@ -149,8 +162,14 @@ const SignUp = () => {
         register={register}
         // confirm={birthdayConfirm}
       />
+      <CustomInput
+        label="닉네임 (선택)"
+        eLabel="nickname"
+        register={register}
+        type="text"
+      />
       <p className={common[`error`]}>{errors.gender?.message}</p>
-
+      {/* 
       <CustomInput
         label="휴대전화 (선택)"
         eLabel="phone"
@@ -159,7 +178,7 @@ const SignUp = () => {
         placeholder="000-0000-0000"
         // confirm={birthdayConfirm}
         // required
-      />
+      /> */}
       <p className={common[`error`]}>{errors.phone?.message}</p>
 
       <ConfirmBtn label="가입하기" canSubmit={canSubmit} />
