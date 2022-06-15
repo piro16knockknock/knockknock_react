@@ -60,7 +60,7 @@ const IntroNotLogin = () => {
             지금 <span>노크노크</span>를 시작해보세요!
           </p>
 
-          <div className={styles[`door-img-box`]} style={{ zIndex: 2 }}>
+          <div className={`${styles[`door-img-box`]}`} style={{ zIndex: 2 }}>
             <img
               onClick={() => navigator("/login")}
               alt="door"

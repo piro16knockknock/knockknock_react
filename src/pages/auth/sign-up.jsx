@@ -71,6 +71,7 @@ const SignUp = () => {
     await authJoin(data)
       .then((res) => {
         console.log("join success", res);
+        //TODO: intro login과 intro not login 구분할 것
         dispatch(
           show({
             content: "회원가입에 성공했습니다.",
@@ -83,6 +84,7 @@ const SignUp = () => {
       })
       .catch((res) => {
         console.log("join error", res);
+        //TODO: setTimeout 설정해줄 것, (dispatch(hide()))
         dispatch(
           show({
             content: "회원가입에 실패했습니다.",
