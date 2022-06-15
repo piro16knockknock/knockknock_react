@@ -2,10 +2,12 @@ import axios from "axios";
 
 const BASE_URL = "http://3.39.9.190:5006/api/v1";
 
-export const auth = axios.create({ baseURL: BASE_URL, withCredentials: true });
+export const auth = axios.create({ baseURL: BASE_URL
+  // , withCredentials: true
+ });
 export const client = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 export async function authJoin(data) {

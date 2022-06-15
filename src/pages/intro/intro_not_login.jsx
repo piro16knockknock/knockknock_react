@@ -64,8 +64,14 @@ const IntroNotLogin = () => {
             <img
               onClick={() => navigator("/login")}
               alt="door"
-              src={IMAGES.DOOR}
+              src={IMAGES.KNOCK_DOOR_INNER}
               className={styles[`intro-door`]}
+            />
+            <img
+              onClick={() => navigator("/login")}
+              alt="door"
+              src={IMAGES.DOOR}
+              className={styles[`intro-door-inner`]}
             />
           </div>
           <div className="text-end" style={{ zIndex: 3, position: "relative" }}>

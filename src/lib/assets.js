@@ -7,7 +7,9 @@ const getImagesPath = (path) =>{
 }
 
 export const IMAGES = {
-    DOOR: getImagesPath('knock_door.png'),
+    KNOCK_DOOR: getImagesPath('knock_door.png'),
+    DOOR: getImagesPath('door.png'),
+    KNOCK_DOOR_INNER: getImagesPath('knock_door_inner.png'),
     ERROR: getImagesPath('error.png'),
 }
 
