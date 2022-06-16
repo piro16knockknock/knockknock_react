@@ -1,22 +1,75 @@
 /*styles.css to calendar.module.css*/
 
 /* calendar page */
-.side-nav {
-  margin-top: 2rem;
-  margin-left: 5rem;
+.container {
+  display: flex;
+  justify-content: center;
 }
 
-.side-nav li {
-  margin-left: 1rem;
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.profile-title {
+  border-radius: 50rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1.2rem;
+  margin: 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.profile-box {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 500;
+  margin: 1.6rem 0;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+}
+
+.name p {
+  color: #707070;
+}
+
+.house-name {
+  background-color: #ffeec3;
+}
+
+.box {
+  width: 22rem;
+  margin-bottom: 1.7rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 2.6rem 2.2rem;
   font-size: 1.4rem;
+  line-height: 1.8rem;
+  box-shadow: 2px 3px 10px #ffeec3;
 }
 
-.side-nav a:hover {
-  border-bottom: #fbdb67 2px solid;
-}
-
-.side-nav a:active {
-  border-bottom: #fbdb67 2px solid;
+.side-todo {
+  margin: 0 6rem;
 }
 
 .rate-box {
@@ -24,29 +77,4 @@
   border-radius: 50%;
   width: 8rem;
   height: 8rem;
-}
-
-#cal-house-name {
-  background-color: #ffeec3;
-}
-
-.cal-side-box {
-  width: 20rem;
-  margin-bottom: 1.4rem;
-  text-align: center;
-  border-radius: 1rem;
-  padding: 2.4rem 2.2rem;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  box-shadow: 2px 3px 10px #ffeec3;
-}
-
-#calendar-side {
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
-
-#todo-side {
-  margin-left: 3rem;
-  margin-right: 3rem;
 }
