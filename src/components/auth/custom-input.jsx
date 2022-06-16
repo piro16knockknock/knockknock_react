@@ -14,4 +14,4 @@ const CustomInput = ({ label, type, value, onChange }) => {
   );
 };
 
-export default CustomInput;
+export default React.memo(CustomInput);

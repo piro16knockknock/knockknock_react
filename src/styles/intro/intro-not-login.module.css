@@ -2,13 +2,28 @@
   position: absolute;
   top: 60%;
   left: 50%;
+  width: max(40rem, 30%);
   transform: translate(-50%, -50%);
   cursor: url(../images/knock_cursor.png) 32 37, auto;
 }
-.door-img-box:hover img {
-  transform: scale(104%);
-  cursor: url(../images/knock_cursor.png) 32 37, auto;
+
+.intro-door-inner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transform-origin: 75% 30%;
+  transition: transform 1s ease-in;
+}
+
+.intro-door-inner:hover {
+  transform-origin: 75% 30%;
+  transform: perspective(1200px) rotateY(60deg);
   opacity: 0.8;
+}
+
+.door-img-box img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .door-img-box a {
