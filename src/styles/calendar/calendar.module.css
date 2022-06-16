@@ -1,0 +1,52 @@
+/*styles.css to calendar.module.css*/
+
+/* calendar page */
+.side-nav {
+  margin-top: 2rem;
+  margin-left: 5rem;
+}
+
+.side-nav li {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.side-nav a:hover {
+  border-bottom: #fbdb67 2px solid;
+}
+
+.side-nav a:active {
+  border-bottom: #fbdb67 2px solid;
+}
+
+.rate-box {
+  background-color: cadetblue;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+}
+
+#cal-house-name {
+  background-color: #ffeec3;
+}
+
+.cal-side-box {
+  width: 20rem;
+  margin-bottom: 1.4rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 2.4rem 2.2rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  box-shadow: 2px 3px 10px #ffeec3;
+}
+
+#calendar-side {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+#todo-side {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

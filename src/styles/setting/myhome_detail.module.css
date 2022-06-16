@@ -1,0 +1,71 @@
+@value knockGreen from "styles/colors.css";
+.container {
+  margin: auto;
+  padding: 5rem 20rem;
+  max-width: 90rem;
+  min-width: 80rem;
+}
+
+section {
+  margin-bottom: 5.1rem;
+}
+.title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 0.1rem solid #989898;
+  margin-bottom: 1.6rem;
+}
+
+.roommate-list {
+  display: flex;
+  align-items: center;
+}
+.roommate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12rem;
+  margin-right: 3rem;
+}
+
+.profile-img {
+  width: 11.2rem;
+  height: 11.2rem;
+  margin-top: 1.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  padding-top: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.plus {
+  background-color: #cacaca;
+  padding: 1.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.plus:hover {
+  cursor: pointer;
+  background-color: knockGreen;
+}
+
+.move-out {
+  display: inline-block;
+  color: #ff6745;
+  border: 0.2rem solid #ff6745;
+  border-radius: 2.5rem;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.move-out:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #ff6745;
+}

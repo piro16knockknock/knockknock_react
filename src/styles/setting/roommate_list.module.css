@@ -1,0 +1,53 @@
+@value sectionTitle from "styles/sizes.css";
+
+.container {
+  margin: auto;
+  padding: 10rem 20rem;
+  width: 90rem;
+  text-align: center;
+}
+
+.title {
+  font-size: sectionTitle;
+  font-weight: bold;
+}
+
+.container > div {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+/*캐러셀*/
+.carousel {
+  overflow: hidden;
+  width: 27rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.carousel-container {
+  display: flex;
+  transition: all 0.4s ease-in;
+}
+.roommate {
+  display: flex;
+  flex: 0 0 27rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-img {
+  width: 24.5rem;
+  height: 24.5rem;
+  object-fit: cover;
+  margin: 8.4rem 0;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 2.2rem;
+  padding-bottom: 2.9rem;
+}

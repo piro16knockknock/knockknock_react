@@ -1,0 +1,24 @@
+.container {
+  margin: 5rem 10rem;
+  justify-content: center;
+  display: flex;
+}
+.section-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-container > div:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.section-container > div {
+  min-width: 35rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .section-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

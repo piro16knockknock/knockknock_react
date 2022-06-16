@@ -1,0 +1,14 @@
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-row input {
+  width: 4rem;
+  border: 0.1rem solid black;
+  border-radius: 0.4rem;
+}
+
+.input-row span {
+  margin: 0 1rem 0 0.5rem;
+}

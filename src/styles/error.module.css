@@ -1,0 +1,23 @@
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.error > img {
+  width: 30rem;
+  height: auto;
+}
+
+.error > div {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.error > div > h1 {
+  font-size: 10rem;
+  color: tomato;
+  font-weight: 800;
+  padding-bottom: 1rem;
+}

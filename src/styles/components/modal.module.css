@@ -1,0 +1,50 @@
+@value knockGreen from "styles/colors.css";
+
+.modal {
+  z-index: 999;
+  position: fixed;
+  max-width: 50rem;
+  min-width: 40rem;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  overflow: auto;
+  padding: 4rem 6rem;
+}
+.modal::-webkit-scrollbar {
+  width: 6px;
+}
+.modal::-webkit-scrollbar-thumb {
+  background-color: knockGreen;
+}
+.modal::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+.modal-background::before {
+  z-index: 999;
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-color: #696969;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header > img:hover {
+  cursor: pointer;
+}
+
+.modal-header > span {
+  font-size: 18px;
+}

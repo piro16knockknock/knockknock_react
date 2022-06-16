@@ -1,0 +1,22 @@
+.social_btn {
+  width: 100%;
+  padding: 1.5rem 0;
+  border: 0.1rem solid #cbcbcb;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  margin: 1.3rem 0;
+  position: relative;
+  justify-content: center;
+}
+
+.social_icon {
+  position: absolute;
+  left: 3rem;
+}
+
+.social_icon-naver {
+  position: absolute;
+  left: 3.5rem;
+}
