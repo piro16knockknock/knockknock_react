@@ -27,7 +27,7 @@ export async function authJoin(data) {
 export async function authLogin({ data, dispatch }) {
   const response = await auth.post("/login/login", data);
   // console.log(response.data.accessToken);
-  return response;
+
   // const { userInfo } = await auth.get("/user/userInfo", {
   //   Authorization: response.data.accessToken,
   // });

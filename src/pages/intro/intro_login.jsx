@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import HaveHome from "./have_home";
 import NoHome from "./no_home";
 import RestIntro from "./rest_intro";

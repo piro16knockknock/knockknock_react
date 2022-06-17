@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import IntroNotLogin from "./intro_not_login";
 import IntroLogin from "./intro_login";
 const Intro = (props) => {
