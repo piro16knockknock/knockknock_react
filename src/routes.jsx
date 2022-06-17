@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
 import LayoutContainer from "pages/layout";
+import Todo from "pages/home/todo";
 
 const Intro = lazy(() => import("pages/intro"));
 const Register = lazy(() => import("pages/intro/register"));
@@ -43,6 +44,7 @@ export default function Routes() {
           path: "home",
           children: [
             { index: true, element: <Calendar /> },
+            { path: "todo/:id", element: <Todo /> },
             { path: "living_rule", element: <LivingRule /> },
             { path: "guideline", element: <Guideline /> },
           ],

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import HaveHome from "./have_home";
 import NoHome from "./no_home";
 import RestIntro from "./rest_intro";
 
-const IntroLogin = (props) => {
-  hasHome = false;
+const IntroLogin = () => {
+  const hasHome = false;
   //로그인 백 구현되면 수정
   return (
     <>

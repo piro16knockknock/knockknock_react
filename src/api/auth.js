@@ -28,6 +28,14 @@ export async function authJoin(data) {
 export async function authLogin({ data, dispatch }) {
   const response = await auth.post("/login/login", data);
   // console.log(response.data.accessToken);
+
+  // const { userInfo } = await auth.get("/user/userInfo", {
+  //   Authorization: response.data.accessToken,
+  // });
+  // console.log(userInfo);
+  // dispatch(login({}));
+  //헤더 들어가는지 확인
+  // setClientHeaders(response.Authorization);
   return response;
 }
 
