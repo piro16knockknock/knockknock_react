@@ -1,5 +1,4 @@
 import axios from "axios";
-import { login } from "redux/auth";
 
 const BASE_URL = "http://3.39.9.190:5006/api/v1";
 
@@ -27,21 +26,21 @@ export async function authJoin(data) {
 
 export async function authLogin({ data, dispatch }) {
   const response = await auth.post("/login/login", data);
-  console.log(response.data.accessToken);
+  // console.log(response.data.accessToken);
   return response;
-  const { userInfo } = await auth.get("/user/userInfo", {
-    Authorization: response.data.accessToken,
-  });
-  console.log(userInfo);
+  // const { userInfo } = await auth.get("/user/userInfo", {
+  //   Authorization: response.data.accessToken,
+  // });
+  // console.log(userInfo);
   // dispatch(login({}));
   //헤더 들어가는지 확인
   // setClientHeaders(response.Authorization);
   return response;
 }
 
-const setClientHeaders = (token) => {
-  client.interceptors.request.use(function (config) {
-    config.headers.Authorization = `Bearer ${token}`;
-    return config;
-  });
-};
+// const setClientHeaders = (token) => {
+//   client.interceptors.request.use(function (config) {
+//     config.headers.Authorization = `Bearer ${token}`;
+//     return config;
+//   });
+// };

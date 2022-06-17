@@ -18,7 +18,7 @@ const MyRoommate = (props) => {
     return () => {
       window.removeEventListener("click", handleCloseModal);
     };
-  }, []);
+  }, [handleCloseModal]);
 
   return (
     <section className={styles[`container`]}>
