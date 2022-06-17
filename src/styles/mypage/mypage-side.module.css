@@ -1,0 +1,30 @@
+.profile-img {
+  width: 9.4rem;
+  height: 9.4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-box {
+  border: 1px solid #c4c4c4;
+  border-radius: 15px;
+  width: 231px;
+  display: flex;
+  margin-right: 5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.9rem;
+  justify-content: center;
+  height: 196px;
+}
+
+.name {
+  margin: 0.6rem;
+  font-weight: 500;
+  font-size: 18px;
+}
+.info-edit-btn {
+  border: 0.1rem solid #363636;
+  padding: 0.2rem 1rem;
+  border-radius: 3rem;
+}

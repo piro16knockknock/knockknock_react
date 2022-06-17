@@ -1,0 +1,26 @@
+.info-row {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.info-row label {
+  width: 13rem;
+  color: #474747;
+}
+
+.name-input {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  width: 33rem;
+}
+
+.edit-icon {
+  border-radius: 50%;
+  padding: 0.7rem;
+  margin-left: 1rem;
+  background-color: #c4c4c4;
+}

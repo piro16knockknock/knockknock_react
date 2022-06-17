@@ -1,0 +1,71 @@
+@import "reset.css";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+
+/*font-family: 'Gothic A1', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;*/
+
+/*반응형*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Pretendard Variable", system-ui, Roboto, "Helvetica Neue",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.layout {
+  margin-top: 8rem;
+}
+.cal-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cal-profile-title {
+  border-radius: 50rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1.2rem;
+  margin: 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.cal-profile-box {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cal-profile-username {
+  font-weight: 500;
+  margin: 1.6rem 0;
+  font-size: 1.3rem;
+}
+
+.cal-profile-username p {
+  color: #707070;
+}
+.plr-10 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.cnt-padding {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}

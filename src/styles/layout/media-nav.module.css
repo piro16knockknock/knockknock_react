@@ -1,0 +1,16 @@
+.media-nav {
+  position: fixed;
+  top: 8rem;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  background-color: white;
+  left: 0;
+  padding: 0 7rem 2rem 7rem;
+  box-shadow: 0 4px 8px -2px gray;
+}
+
+.media-nav > li {
+  margin-left: 0;
+  padding: 0.5rem 0;
+}
