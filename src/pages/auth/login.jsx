@@ -21,7 +21,9 @@ const Login = () => {
   const { value: popUpValue, show: popUpShow } = useSelector(
     (state) => state.popUp
   );
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.preventDefault();
+
     const data = {
       id,
       password,
@@ -32,7 +34,7 @@ const Login = () => {
 
         //임시 조치
         if (!res.data.accessToken) {
-          throw Error("로그인 안됨");
+          throw Error("로그인 실패");
         }
 
         //성공시
@@ -57,6 +59,7 @@ const Login = () => {
             success: false,
           })
         );
+
         setTimeout(() => {
           dispatch(hide());
         }, 3000);
@@ -72,7 +75,7 @@ const Login = () => {
           success={popUpValue.success}
         />
       )}
-      <section className={common.container}>
+      <form className={common.container} onSubmit={(e) => handleClick(e)}>
         <p className={common.title}>로그인</p>
         <CustomInput
           label="아이디"
@@ -104,7 +107,7 @@ const Login = () => {
         <SocialBtn iconPath={ICONS.GOOGLE} text="구글 로그인" />
         <SocialBtn iconPath={ICONS.NAVER} text="네이버 로그인" />
         <SocialBtn iconPath={ICONS.KAKAO} text="카카오 로그인" />
-      </section>{" "}
+      </form>
     </>
   );
 };
