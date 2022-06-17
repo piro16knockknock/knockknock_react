@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "/"
+  from = "https://piro-knockknock.netlify.app/*"
+  to = "https://piro-knockknock.netlify.app/"
   status = 200
