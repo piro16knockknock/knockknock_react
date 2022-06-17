@@ -14,4 +14,4 @@ const CustomInput = ({ eLabel, register, label, confirm }) => {
   );
 };
 
-export default CustomInput;
+export default React.memo(CustomInput);

@@ -29,8 +29,8 @@ const IntroNotLogin = () => {
       // }
       if (popUpShow) {
         dispatch(hide());
-      }, 3000);
-    }
+      }
+    };
   }, [dispatch, popUpShow]);
 
   return (
@@ -60,12 +60,18 @@ const IntroNotLogin = () => {
             지금 <span>노크노크</span>를 시작해보세요!
           </p>
 
-          <div className={styles[`door-img-box`]} style={{ zIndex: 2 }}>
+          <div className={`${styles[`door-img-box`]}`} style={{ zIndex: 2 }}>
+            <img
+              onClick={() => navigator("/login")}
+              alt="door"
+              src={IMAGES.KNOCK_DOOR_INNER}
+              className={styles[`intro-door`]}
+            />
             <img
               onClick={() => navigator("/login")}
               alt="door"
               src={IMAGES.DOOR}
-              className={styles[`intro-door`]}
+              className={styles[`intro-door-inner`]}
             />
           </div>
           <div className="text-end" style={{ zIndex: 3, position: "relative" }}>
