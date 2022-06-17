@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "styles/intro/direct-register.module.css";
 import SelectBox from "components/setting/select-box";
 import DateInput from "components/setting/date-input";
-import { ICONS } from "lib/assets";
 import CustomBtn from "components/custom-btn";
 
 const DirectRegister = () => {

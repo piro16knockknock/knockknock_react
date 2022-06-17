@@ -1,15 +1,18 @@
 import { ICONS } from "lib/assets";
 import useInput from "hook/useInput";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "styles/setting/modal-search-input.module.css";
 import { roommateSearch } from "lib/dummy_roommate";
 import Check from "components/icons/check";
 
 const ModalSearchInput = (props) => {
   const { value, onChange } = useInput("");
-  const [resultList, setResultList] = useState(roommateSearch);
+  const [resultList, setResultList] = useState([]);
   const [clickedList, setClickedList] = useState({});
 
+  useEffect(() => {
+    setResultList(roommateSearch);
+  }, []);
   const handleClick = (id) => {
     setClickedList((prev) => {
       const update = { ...prev };

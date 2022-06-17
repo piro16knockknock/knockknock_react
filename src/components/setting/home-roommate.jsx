@@ -14,7 +14,7 @@ const HomeRoommate = () => {
     return () => {
       window.removeEventListener("click", handleCloseModal);
     };
-  }, []);
+  }, [handleCloseModal]);
 
   return (
     <>
