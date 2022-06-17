@@ -52,13 +52,14 @@ const Login = () => {
       });
   };
   return (
-    <section className={common.container}>
+    <form className={common.container}>
       <p className={common.title}>로그인</p>
       <CustomInput label="아이디" type="text" value={id} onChange={handleId} />
       <CustomInput
         label="비밀번호"
         type="password"
         value={password}
+        autoComplete="off"
         onChange={handlePassword}
       />
       <div className={styles.text_row}>
@@ -78,7 +79,7 @@ const Login = () => {
       <SocialBtn iconPath={ICONS.GOOGLE} text="구글 로그인" />
       <SocialBtn iconPath={ICONS.NAVER} text="네이버 로그인" />
       <SocialBtn iconPath={ICONS.KAKAO} text="카카오 로그인" />
-    </section>
+    </form>
   );
 };
 

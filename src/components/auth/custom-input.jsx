@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "styles/auth/custom-input.module.css";
-const CustomInput = ({ label, type, value, onChange }) => {
+const CustomInput = ({ label, type, value, onChange, ...rest }) => {
   return (
     <div className={styles.button_container}>
       <label htmlFor={styles.input}>{label}</label>
@@ -9,6 +9,7 @@ const CustomInput = ({ label, type, value, onChange }) => {
         value={value}
         className={styles.input}
         onChange={onChange}
+        {...rest}
       />
     </div>
   );
