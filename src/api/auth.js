@@ -5,7 +5,7 @@ const BASE_URL = "http://3.39.9.190:5006/api/v1";
 export const auth = axios.create({ baseURL: BASE_URL,
   "Content-Type": `application/json`,
   // , withCredentials: true
- });
+});
 export const client = axios.create({
   baseURL: BASE_URL,
   "Content-Type": `application/json`,
@@ -25,18 +25,15 @@ export async function authJoin(data) {
   return response;
 }
 
-export async function authLogin(data) {
+export async function authLogin({ data, dispatch }) {
   const response = await auth.post("/login/login", data);
-  console.log(response);
-
-  //헤더 들어가는지 확인
-  setClientHeaders(response.Authorization);
+  // console.log(response.data.accessToken);
   return response;
 }
 
-const setClientHeaders = (token) => {
-  client.interceptors.request.use(function (config) {
-    config.headers.Authorization = `Bearer ${token}`;
-    return config;
-  });
-};
+// const setClientHeaders = (token) => {
+//   client.interceptors.request.use(function (config) {
+//     config.headers.Authorization = `Bearer ${token}`;
+//     return config;
+//   });
+// };

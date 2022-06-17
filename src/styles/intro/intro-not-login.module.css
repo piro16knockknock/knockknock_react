@@ -1,7 +1,8 @@
 .door-img-box {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
+  width: max(40rem, 30%);
   transform: translate(-50%, -50%);
   cursor: url(../images/knock_cursor.png) 32 37, auto;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -13,9 +14,12 @@ const Footer = () => {
             justifyContent: "center",
           }}
         >
-          <a className="list-group-item-action footer-title" href="#intro-main">
+          <Link
+            className="list-group-item-action footer-title"
+            to="#intro-main"
+          >
             ©Knock/Knock
-          </a>
+          </Link>
           <p className="footer-subtitle">
             룸메이트와의 쾌적하고 편안한 생활 지킴이
           </p>
@@ -23,41 +27,41 @@ const Footer = () => {
         <div className="footer-li list-group">
           <div className="footer-2">
             <h5>
-              <a className="list-group-item-action" href="#intro-persona">
+              <Link className="list-group-item-action" to="#intro-persona">
                 서비스 소개
-              </a>
+              </Link>
             </h5>
             <ul>
               <li className="footer-index">
-                <a className="list-group-item-action" href="#intro-feat1">
+                <Link className="list-group-item-action" to="#intro-feat1">
                   룸메이트 관리
-                </a>
+                </Link>
               </li>
               <li className="footer-index">
-                <a className="list-group-item-action" href="#intro-feat2">
+                <Link className="list-group-item-action" to="#intro-feat2">
                   생활수칙 관리
-                </a>
+                </Link>
               </li>
               <li className="footer-index">
-                <a className="list-group-item-action" href="#intro-feat3">
+                <Link className="list-group-item-action" to="#intro-feat3">
                   캘린더 공유
-                </a>
+                </Link>
               </li>
               <li className="footer-index">
-                <a className="list-group-item-action" href="#intro-feat4">
+                <Link className="list-group-item-action" to="#intro-feat4">
                   할 일 체크
-                </a>
+                </Link>
               </li>
               <li className="footer-index">
-                <a>커뮤니티</a>
+                <span>커뮤니티</span>
               </li>
             </ul>
           </div>
           <div className="footer-3">
             <h5>
-              <a className="list-group-item-action" href="#intro-feat5">
+              <Link className="list-group-item-action" to="#intro-feat5">
                 커뮤니티
-              </a>
+              </Link>
             </h5>
             <ul>
               <li className="footer-index">공지사항</li>
@@ -67,7 +71,7 @@ const Footer = () => {
           </div>
           <div className="footer-4">
             <h5>
-              <a href="#home">ABOUT US</a>
+              <Link to="#home">ABOUT US</Link>
             </h5>
             <ul>
               <li className="footer-index">서비스 소개</li>
