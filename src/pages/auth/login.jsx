@@ -10,7 +10,6 @@ import useInput from "hook/useInput";
 import { useDispatch, useSelector } from "react-redux";
 import { show, hide } from "redux/pop-up";
 import Toast from "components/toast";
-
 import { authLogin } from "api/auth";
 
 const Login = () => {
@@ -27,7 +26,7 @@ const Login = () => {
       id,
       password,
     };
-    await authLogin(data)
+    await authLogin({ data, dispatch })
       .then((res) => {
         console.log("login success", res);
 

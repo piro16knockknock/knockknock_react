@@ -1,10 +1,12 @@
 import axios from "axios";
+import { login } from "redux/auth";
 
 const BASE_URL = "http://3.39.9.190:5006/api/v1";
 
-export const auth = axios.create({ baseURL: BASE_URL
+export const auth = axios.create({
+  baseURL: BASE_URL,
   // , withCredentials: true
- });
+});
 export const client = axios.create({
   baseURL: BASE_URL,
   // withCredentials: true,
@@ -23,12 +25,17 @@ export async function authJoin(data) {
   return response;
 }
 
-export async function authLogin(data) {
+export async function authLogin({ data, dispatch }) {
   const response = await auth.post("/login/login", data);
-  console.log(response);
-
+  console.log(response.data.accessToken);
+  return response;
+  const { userInfo } = await auth.get("/user/userInfo", {
+    Authorization: response.data.accessToken,
+  });
+  console.log(userInfo);
+  // dispatch(login({}));
   //헤더 들어가는지 확인
-  setClientHeaders(response.Authorization);
+  // setClientHeaders(response.Authorization);
   return response;
 }
 
