@@ -4,15 +4,18 @@ import "styles/intro/intro.css";
 import { Suspense } from "react";
 import Routes from "./routes";
 import { BrowserRouter } from "react-router-dom";
-import store from "redux/store";
+import store, { persistor } from "redux/store";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={null}>
         <Provider store={store}>
-          <Routes />
+          <PersistGate loading={null} persistor={persistor}>
+            <Routes />
+          </PersistGate>
         </Provider>
       </Suspense>
     </BrowserRouter>
